@@ -6,14 +6,16 @@ env:
   global:
     - NODE_ENV=production
 
-# do ./scripts folder executable
 before_install:
   - pip install --user codecov
   - yarn global add lerna
+
+before_script:
+  - yarn install
+  - lerna bootstrap
 
 after_success:
   - codecov
 
 script:
-  - lerna bootstrap
   - lerna run test:api
