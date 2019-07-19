@@ -10,12 +10,10 @@ before_install:
   - pip install --user codecov
   - yarn global add lerna
 
-before_script:
-  - yarn install
-  - lerna bootstrap
-
 after_success:
   - codecov
 
 script:
+  - yarn install
+  - lerna bootstrap
   - lerna run test:api

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/byverdu/mars-rover.svg?branch=master)](https://travis-ci.org/byverdu/mars-rover)
+
 # Mars Rover
 
 One Paragraph of project description goes here
