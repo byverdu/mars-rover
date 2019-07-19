@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "10"
+
+env:
+  global:
+    - NODE_ENV=production
+
+# do ./scripts folder executable
+before_install:
+  - pip install --user codecov
+  - yarn global add lerna
+
+after_success:
+  - codecov
+
+script:
+  - lerna bootstrap
+  - lerna run test:api
