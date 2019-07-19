@@ -13,7 +13,8 @@
 		"scripts": {
 				"lint": "./node_modules/.bin/eslint . --ext .ts,.tsx",
 				"tsc": "tsc",
-				"test:api:watch": "jest --config=jest.config.js __tests__ --watchAll"
+				"test:api:watch": "jest --config=jest.config.js __tests__ --watchAll",
+				"test:api": "jest --config=jest.config.js __tests__ --watchAll=false --coverage"
 		},
 		"lint-staged": {
 				"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -51,8 +52,14 @@
 				"@types/express": "^4.17.0",
 				"@types/jest": "^24.0.15",
 				"@types/mongoose": "^5.5.8",
-				"@typescript-eslint/parser": "^1.12.0",
-				"eslint-config-react-app": "^4.0.1",
+        "@typescript-eslint/parser": "^1.12.0",
+        "eslint": "^6.0.1",
+        "eslint-config-react-app": "^4.0.1",
+        "eslint-plugin-flowtype": "^3.12.1",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.14.2",
+        "eslint-plugin-react-hooks": "^1.6.1",
 				"jest": "^24.8.0",
 				"mongodb-memory-server": "^5.1.5",
 				"ts-jest": "^24.0.2",
