@@ -1,7 +1,7 @@
 {
-	"name": "@mars-rovers/server",
+	"name": "@mars-rover/api",
 	"version": "0.0.0",
-	"description": "backend web server and api",
+	"description": "web server and api",
 	"author": "byverdu <byverdu@gmail.com>",
 	"homepage": "https://github.com/byverdu/mars-rover#readme",
 	"license": "ISC",
