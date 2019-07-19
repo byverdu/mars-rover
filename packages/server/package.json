@@ -9,7 +9,23 @@
 	"directories": {
 		"lib": "lib",
 		"test": "__tests__"
-	},
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint . --ext .ts,.tsx"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "npm run lint",
+      "pre-push": "CI=true && npm run lint"
+    }
+  },
 	"files": [
 		"lib"
 	],
