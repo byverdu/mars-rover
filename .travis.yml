@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "10"
+
+env:
+  global:
+    # - NODE_ENV=production
+
+services:
+  - docker
+
+before_install:
+  - pip install --user codecov
+  - yarn global add lerna
+  - docker-compose up --build
+
+after_success:
+  - codecov
+  - docker stop $(docker ps -aq)
+  - docker rm $(docker ps -aq)
+
+script:
+  - yarn install
+  - lerna run test:api
