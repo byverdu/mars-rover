@@ -1,8 +1,6 @@
 import * as mongoose from 'mongoose';
+import { TInput } from '../models/types';
 
-type TInput = {
-  db: string;
-};
 export default ({ db }: TInput) => {
   const connect = () => {
     mongoose

@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import { EnumCardinalPoints, EnumRoverStatus } from './enums';
 
 export interface IPlateau extends mongoose.Document {
   uuid: string;
@@ -27,17 +28,4 @@ export interface IArea {
 export interface ICoords {
   x: number;
   y: number;
-}
-
-export enum EnumCardinalPoints {
-  N = 'N',
-  S = 'S',
-  E = 'E',
-  W = 'W'
-}
-
-export enum EnumRoverStatus {
-  moving = 'moving',
-  sleep = 'sleep',
-  ko = 'KO'
 }
