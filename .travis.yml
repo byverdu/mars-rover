@@ -15,5 +15,5 @@ after_success:
 
 script:
   - yarn install
-  - cd packages/api && yarn install
-  - cd packages/api && yarn test:api
+  - cd packages/api && yarn install && yarn test:api
+  # - cd packages/api && yarn test:api
