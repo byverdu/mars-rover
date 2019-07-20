@@ -15,5 +15,5 @@ after_success:
 
 script:
   - yarn install
-  - lerna bootstrap
+  - cd packages/api && yarn install
   - cd packages/api && yarn test:api
