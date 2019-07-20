@@ -10,20 +10,20 @@ services:
       MONGO_INITDB_DATABASE: mars-rovers
     command: --smallfiles
 
-  api:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.api
-    container_name: mars-rover_api
-    depends_on:
-      - db
-    ports:
-      - 9000:9000
-      - 9229:9229
-    volumes:
-      - ./packages/api/package.json:/usr/src/app/packages/api/package.json
-      - ./packages/api:/usr/src/app/packages/api
-      - /usr/src/app/packages/api/node_modules
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile.api
+  #   container_name: mars-rover_api
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 9000:9000
+  #     - 9229:9229
+  #   volumes:
+  #     - ./packages/api/package.json:/usr/src/app/packages/api/package.json
+  #     - ./packages/api:/usr/src/app/packages/api
+  #     - /usr/src/app/packages/api/node_modules
 
   # client:
   #   build:
