@@ -6,19 +6,32 @@ env:
   global:
     # - NODE_ENV=production
 
+addons:
+  apt:
+    packages:
+      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
+      - libgconf-2-4
+
 services:
   - docker
+
+before_script:
+  - docker-compose up --build -d
+
+after_script:
+  - docker stop $(docker ps -aq)
+  - docker rm $(docker ps -aq)
 
 before_install:
   - pip install --user codecov
   - yarn global add lerna
-  - docker-compose up --build
 
 after_success:
   - codecov
-  - docker stop $(docker ps -aq)
-  - docker rm $(docker ps -aq)
 
 script:
   - yarn install
+  - lerna bootstrap
   - lerna run test:api
+
+# CODECOV_TOKEN="c9b582b5-202a-4f95-a576-ababde1f1e50"

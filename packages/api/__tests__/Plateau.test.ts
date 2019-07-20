@@ -1,14 +1,8 @@
 import * as mongoose from 'mongoose';
-import {plateauData} from './mockData';
+import { plateauData } from './mockData';
 
 describe('Plateau model', () => {
-  const {
-    plateau,
-    uuid,
-    name,
-    size,
-    rovers
-  } = plateauData
+  const { plateau, uuid, name, size, rovers } = plateauData;
   beforeAll(async () => {
     await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db', {
       useNewUrlParser: true
@@ -16,18 +10,23 @@ describe('Plateau model', () => {
   });
 
   afterAll(async () => {
-    mongoose.connection.close();
+    mongoose.connection.db.dropDatabase( () => {
+      mongoose.connection.close();
+    });
   });
 
   it('Should have an uuid property', async () => {
     expect(plateau.uuid).toEqual(uuid);
   });
+
   it('Should have a name property', async () => {
     expect(plateau.name).toEqual(name);
   });
+
   it('Should have a size property', async () => {
     expect(plateau.size).toEqual(size);
   });
+
   it('Should have a rovers property with 2 items', async () => {
     expect(plateau.rovers[0]).toEqual(rovers[0]);
     expect(plateau.rovers[1]).toEqual(rovers[1]);
