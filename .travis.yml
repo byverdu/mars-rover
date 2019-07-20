@@ -6,14 +6,19 @@ env:
   global:
     # - NODE_ENV=production
 
+services:
+  - docker
+
 before_install:
   - pip install --user codecov
   - yarn global add lerna
+  - docker-compose run --build
 
 after_success:
   - codecov
+  - docker stop $(docker ps -aq)
+  - docker rm $(docker ps -aq)
 
 script:
   - yarn install
-  - cd packages/api && yarn install && yarn test:api
-  # - cd packages/api && yarn test:api
+  - lerna run test:api
