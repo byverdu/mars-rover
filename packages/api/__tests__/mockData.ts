@@ -1,9 +1,9 @@
 import { v4 } from 'uuid';
 import Plateau from '../src/models/Plateau';
 import Rover from '../src/models/Rover';
-import { IRover, IPlateau, IArea } from '../src/models/Interfaces';
+import { IRover, IPlateau, IArea } from '../src/types/Interfaces';
 
-import { EnumCardinalPoints, EnumRoverStatus } from '../src/models/enums';
+import { EnumCardinalPoints, EnumRoverStatus } from '../src/types/enums';
 
 // Rover mock data
 const uuid = v4();

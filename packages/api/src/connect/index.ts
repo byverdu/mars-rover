@@ -1,12 +1,12 @@
 import * as mongoose from 'mongoose';
-import { TInput } from '../models/types';
+import { TInput } from '../types/types';
 
 export default ({ db }: TInput) => {
   const connect = () => {
     mongoose
       .connect(db, { useNewUrlParser: true })
       .then(() => {
-        return console.info(`Successfully connected to ${db}`);
+        console.info(`Successfully connected to ${db}`);
       })
       .catch((error) => {
         console.error('Error connecting to database: ', error);

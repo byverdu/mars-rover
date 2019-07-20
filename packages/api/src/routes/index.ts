@@ -1,5 +1,5 @@
-import { TRoutesInput } from '../models/types';
-import { EnumApiRoutes } from '../models/enums';
+import { TRoutesInput } from '../types/types';
+import { EnumApiRoutes } from '../types/enums';
 import { getHealthCheck } from '../controllers';
 
 export default ({ app }: TRoutesInput) => {

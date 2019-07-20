@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import { IRover } from './Interfaces';
+import { IRover } from '../types/Interfaces';
 
 async function preSaveHook(next) {
   if (this._doc) {
