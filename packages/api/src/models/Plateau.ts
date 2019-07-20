@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import {IPlateau} from './Interfaces';
+import { IPlateau } from './Interfaces';
 
 const PlateauSchema: mongoose.Schema = new mongoose.Schema({
   uuid: { type: String, required: true, unique: true },

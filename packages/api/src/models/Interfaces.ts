@@ -11,12 +11,12 @@ export interface IRover extends mongoose.Document {
   uuid: string;
   uuidPlateau: string;
   lastKnownPosition: {
-    axis: ICoords,
-    position: EnumCardinalPoints
+    axis: ICoords;
+    position: EnumCardinalPoints;
   };
   status: EnumRoverStatus;
   dateCreation: Date;
-  modifiedAt: Date
+  modifiedAt: Date;
 }
 
 export interface IArea {
@@ -33,7 +33,7 @@ export enum EnumCardinalPoints {
   N = 'N',
   S = 'S',
   E = 'E',
-  W = 'W',
+  W = 'W'
 }
 
 export enum EnumRoverStatus {

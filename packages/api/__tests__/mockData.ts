@@ -1,7 +1,13 @@
-import {v4} from 'uuid';
-import Plateau from '../models/Plateau';
-import Rover from '../models/Rover';
-import {IRover, EnumCardinalPoints, EnumRoverStatus, IPlateau, IArea} from '../models/Interfaces';
+import { v4 } from 'uuid';
+import Plateau from '../src/models/Plateau';
+import Rover from '../src/models/Rover';
+import {
+  IRover,
+  EnumCardinalPoints,
+  EnumRoverStatus,
+  IPlateau,
+  IArea
+} from '../src/models/Interfaces';
 
 // Rover mock data
 const uuid = v4();
@@ -13,7 +19,7 @@ const lastKnownPosition: IRover['lastKnownPosition'] = {
   },
   position: EnumCardinalPoints.N
 };
-const status: EnumRoverStatus = EnumRoverStatus.sleep; 
+const status: EnumRoverStatus = EnumRoverStatus.sleep;
 const rover: IRover = new Rover({
   uuid,
   uuidPlateau,
@@ -58,8 +64,4 @@ const plateauData = {
   rovers
 };
 
-
-  export {
-    roverData,
-    plateauData
-  };
+export { roverData, plateauData };

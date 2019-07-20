@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
-import {IRover} from './Interfaces';
+import { IRover } from './Interfaces';
 
-async function preSaveHook (next) {
+async function preSaveHook(next) {
   if (this._doc) {
     let doc = <IRover>this._doc;
     let now = new Date();
@@ -26,11 +26,11 @@ const RoverSchema: mongoose.Schema = new mongoose.Schema({
     }
   },
   status: { type: String, required: true, unique: true },
-  dateCreation: { type: Date, required: false},
-  modifiedAt: { type: Date, required: false}
+  dateCreation: { type: Date, required: false },
+  modifiedAt: { type: Date, required: false }
 });
 
-RoverSchema.pre('save', preSaveHook);;
+RoverSchema.pre('save', preSaveHook);
 
 // Export the model and return your IRover interface
 export default mongoose.model<IRover>('Rover', RoverSchema);

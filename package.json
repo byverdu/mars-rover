@@ -2,10 +2,11 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "lint": "./node_modules/.bin/eslint . --ext .ts,.tsx"
+    "lint": "./node_modules/.bin/eslint . --ext .ts,.tsx",
+    "prettier": "./node_modules/.bin/prettier \"packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --write"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "git add"
     ]

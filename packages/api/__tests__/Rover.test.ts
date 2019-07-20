@@ -1,14 +1,8 @@
 import * as mongoose from 'mongoose';
-import {roverData} from './mockData';
+import { roverData } from './mockData';
 
 describe('Plateau model', () => {
-  const {
-    rover,
-    uuid,
-    uuidPlateau,
-    lastKnownPosition,
-    status
-  } = roverData;
+  const { rover, uuid, uuidPlateau, lastKnownPosition, status } = roverData;
 
   beforeAll(async () => {
     await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db_test', {
@@ -48,7 +42,7 @@ describe('Plateau model', () => {
     expect(rover.dateCreation).toEqual(undefined);
     const spy = jest.spyOn(rover, 'save');
     await rover.save();
-    
+
     expect(spy).toHaveBeenCalled();
     expect(rover.dateCreation).toBeDefined();
   });
@@ -58,7 +52,7 @@ describe('Plateau model', () => {
     const spy = jest.spyOn(rover, 'save');
     await rover.save();
     await rover.save();
-    
+
     expect(spy).toHaveBeenCalled();
     expect(rover.modifiedAt).toBeDefined();
   });
