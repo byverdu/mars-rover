@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 import {v4} from 'uuid';
 import Plateau from '../models/Plateau';
-import {IPlateau, ICoords, IArea} from '../models/Interfaces';
+import {IPlateau, IArea} from '../models/Interfaces';
 
 describe('Plateau model', () => {
   const uuid = v4();
