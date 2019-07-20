@@ -7,7 +7,8 @@ const PlateauSchema: mongoose.Schema = new mongoose.Schema({
   size: {
     width: { type: Number, required: true, unique: true },
     height: { type: Number, required: true, unique: true }
-  }
+  },
+  rovers: { type: Array, required: true, unique: true }
 });
 
 // Export the model and return your IPlateau interface

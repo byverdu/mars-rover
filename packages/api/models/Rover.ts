@@ -17,6 +17,7 @@ async function preSaveHook (next) {
 
 const RoverSchema: mongoose.Schema = new mongoose.Schema({
   uuid: { type: String, required: true, unique: true },
+  uuidPlateau: { type: String, required: true, unique: true },
   lastKnownPosition: {
     position: { type: String, required: true, unique: true },
     axis: {

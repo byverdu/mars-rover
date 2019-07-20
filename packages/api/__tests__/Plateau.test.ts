@@ -1,20 +1,14 @@
 import * as mongoose from 'mongoose';
-import {v4} from 'uuid';
-import Plateau from '../models/Plateau';
-import {IPlateau, IArea} from '../models/Interfaces';
+import {plateauData} from './mockData';
 
 describe('Plateau model', () => {
-  const uuid = v4();
-  const name = 'mars';
-  const size: IArea = {
-    width: 5,
-    height: 5
-  };
-  const plateau: IPlateau = new Plateau({
+  const {
+    plateau,
     uuid,
     name,
-    size
-  });
+    size,
+    rovers
+  } = plateauData
   beforeAll(async () => {
     await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db', {
       useNewUrlParser: true
@@ -33,6 +27,11 @@ describe('Plateau model', () => {
   });
   it('Should have a size property', async () => {
     expect(plateau.size).toEqual(size);
+  });
+  it('Should have a rovers property with 2 items', async () => {
+    expect(plateau.rovers[0]).toEqual(rovers[0]);
+    expect(plateau.rovers[1]).toEqual(rovers[1]);
+    expect(plateau.rovers).toHaveLength(2);
   });
 
   it('Should save a plateau', async () => {

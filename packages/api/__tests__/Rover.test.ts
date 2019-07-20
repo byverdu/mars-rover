@@ -1,25 +1,17 @@
 import * as mongoose from 'mongoose';
-import {v4} from 'uuid';
-import Rover from '../models/Rover';
-import {IRover, EnumCardinalPoints, EnumRoverStatus} from '../models/Interfaces';
+import {roverData} from './mockData';
 
 describe('Plateau model', () => {
-  const uuid = v4();
-  const lastKnownPosition: IRover['lastKnownPosition'] = {
-    axis: {
-      x: 0,
-      y: 0
-    },
-    position: EnumCardinalPoints.N
-  };
-  const status: EnumRoverStatus = EnumRoverStatus.sleep 
-  const rover: IRover = new Rover({
+  const {
+    rover,
     uuid,
+    uuidPlateau,
     lastKnownPosition,
     status
-  });
+  } = roverData;
+
   beforeAll(async () => {
-    await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db', {
+    await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db_test', {
       useNewUrlParser: true
     });
   });
@@ -31,9 +23,15 @@ describe('Plateau model', () => {
   it('Should have an uuid property', async () => {
     expect(rover.uuid).toEqual(uuid);
   });
+
+  it('Should have an uuidPlateau property', async () => {
+    expect(rover.uuidPlateau).toEqual(uuidPlateau);
+  });
+
   it('Should have a lastKnownPosition property', async () => {
     expect(rover.lastKnownPosition).toEqual(lastKnownPosition);
   });
+
   it('Should have a status property', async () => {
     expect(rover.status).toEqual(status);
   });
@@ -50,8 +48,6 @@ describe('Plateau model', () => {
     expect(rover.dateCreation).toEqual(undefined);
     const spy = jest.spyOn(rover, 'save');
     await rover.save();
-
-    console.log(rover)
     
     expect(spy).toHaveBeenCalled();
     expect(rover.dateCreation).toBeDefined();
