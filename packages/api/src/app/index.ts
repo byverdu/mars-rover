@@ -13,7 +13,7 @@ app.get('/', (req: Request, res: Response) =>
   res.send('Welcome to the Mongoose & TypeScript example')
 );
 
-const db = 'mongodb://localhost:27017/test';
+const db = 'mongodb://localhost:27017/mars-rover_db';
 connect({ db });
 routes({ app });
 

@@ -16,12 +16,15 @@ describe('Plateau model', () => {
   it('Should have an uuid property', async () => {
     expect(plateau.uuid).toEqual(uuid);
   });
+
   it('Should have a name property', async () => {
     expect(plateau.name).toEqual(name);
   });
+
   it('Should have a size property', async () => {
     expect(plateau.size).toEqual(size);
   });
+
   it('Should have a rovers property with 2 items', async () => {
     expect(plateau.rovers[0]).toEqual(rovers[0]);
     expect(plateau.rovers[1]).toEqual(rovers[1]);
