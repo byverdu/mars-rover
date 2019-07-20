@@ -14,7 +14,7 @@
 				"lint": "./node_modules/.bin/eslint . --ext .ts,.tsx",
 				"tsc": "tsc",
 				"test:api:watch": "jest --config=jest.config.js __tests__ --watchAll",
-				"test:api": "jest --config=jest.config.js __tests__ --watchAll=false --coverage"
+				"test:api": "jest --config=jest.config.js __tests__ --watchAll=false --coverage --maxWorkers=4"
 		},
 		"lint-staged": {
 				"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
