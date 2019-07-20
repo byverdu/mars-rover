@@ -42,12 +42,28 @@ describe('Plateau model', () => {
     expect(rover.dateCreation).toEqual(undefined);
   });
 
+  it('Should have a modifiedAt property', async () => {
+    expect(rover.modifiedAt).toEqual(undefined);
+  });
+
   it('Should save a rover and set the creation date', async () => {
     expect(rover.dateCreation).toEqual(undefined);
     const spy = jest.spyOn(rover, 'save');
     await rover.save();
+
+    console.log(rover)
     
     expect(spy).toHaveBeenCalled();
     expect(rover.dateCreation).toBeDefined();
+  });
+
+  it('Should change the modifiedAt property after any update', async () => {
+    expect(rover.modifiedAt).toEqual(undefined);
+    const spy = jest.spyOn(rover, 'save');
+    await rover.save();
+    await rover.save();
+    
+    expect(spy).toHaveBeenCalled();
+    expect(rover.modifiedAt).toBeDefined();
   });
 });

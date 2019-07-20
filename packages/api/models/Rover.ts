@@ -7,8 +7,9 @@ async function preSaveHook (next) {
     let now = new Date();
     if (!doc.dateCreation) {
       doc.dateCreation = now;
+    } else {
+      doc.modifiedAt = now;
     }
-    doc.modifiedAt = now;
   }
   next();
   return this;
