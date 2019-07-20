@@ -8,7 +8,7 @@ describe('Plateau model', () => {
     name,
     size,
     rovers
-  } = plateauData
+  } = plateauData;
   beforeAll(async () => {
     await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db', {
       useNewUrlParser: true
