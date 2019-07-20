@@ -12,5 +12,8 @@ export enum EnumRoverStatus {
 }
 
 export enum EnumApiRoutes {
-  getHealthCheck = '/health-check'
+  getHealthCheck = '/health-check',
+  getPlateau = '/api/plateau',
+  getRoot = '/',
+  postPlateau = '/api/plateau/launch-rovers'
 }

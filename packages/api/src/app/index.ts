@@ -9,10 +9,6 @@ const app: Application = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req: Request, res: Response) =>
-  res.send('Welcome to the Mongoose & TypeScript example')
-);
-
 const db = 'mongodb://localhost:27017/mars-rover_db';
 connect({ db });
 routes({ app });
