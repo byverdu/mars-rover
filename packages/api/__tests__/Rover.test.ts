@@ -1,11 +1,11 @@
 import * as mongoose from 'mongoose';
 import { roverData } from './mockData';
 
-describe('Plateau model', () => {
+describe('Rover model', () => {
   const { rover, uuid, uuidPlateau, lastKnownPosition, status } = roverData;
 
   beforeAll(async () => {
-    await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db_test', {
+    await mongoose.connect(global.__MONGO_URI__, {
       useNewUrlParser: true
     });
   });
