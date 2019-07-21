@@ -12,9 +12,9 @@ describe('Api Routes', () => {
   });
 
   afterAll(async () => {
-    mongoose.connection.db.dropDatabase(() => {
-      mongoose.connection.close();
-    });
+    await mongoose.connection.db.dropDatabase();
+    await mongoose.connection.close();
+
   });
 
   describe('GET /health-check', function () {
