@@ -5,5 +5,5 @@ module.exports = {
   testEnvironment: './jest/mongo-environment.js',
   testPathIgnorePatterns: ['__tests__/mockData.ts'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*', '!src/connect/**', '!src/app/**', '!src/types/**', '!src/routes/**', '!src/index.ts']
+  collectCoverageFrom: ['src/**/*', '!src/database/**', '!src/app/**', '!src/types/**', '!src/routes/**', '!src/index.ts']
 };
