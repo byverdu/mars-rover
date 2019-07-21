@@ -11,13 +11,19 @@ export interface IPlateau extends mongoose.Document {
 export interface IRover extends mongoose.Document {
   uuid: string;
   uuidPlateau: string;
-  lastKnownPosition: {
-    axis: ICoords;
-    position: EnumCardinalPoints;
+  lastKnownPosition: IRoverPosition;
+  stepsToNextPosition: {
+    steps: IRoverPosition[];
+    source: string;
   };
   status: EnumRoverStatus;
   dateCreation: Date;
   modifiedAt: Date;
+}
+
+export interface IRoverPosition {
+  axis: ICoords;
+  position: EnumCardinalPoints;
 }
 
 export interface IArea {

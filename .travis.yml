@@ -15,12 +15,12 @@ addons:
 services:
   - docker
 
-before_script:
-  - docker-compose up --build -d
+# before_script:
+#   - docker-compose up --build -d
 
-after_script:
-  - docker stop $(docker ps -aq)
-  - docker rm $(docker ps -aq)
+# after_script:
+#   - docker-compose stop $(docker ps -aq)
+#   - docker-compose rm $(docker ps -aq)
 
 before_install:
   - pip install --user codecov
@@ -32,6 +32,4 @@ after_success:
 script:
   - yarn install
   - lerna bootstrap
-  - lerna run test:api
-
-# CODECOV_TOKEN="c9b582b5-202a-4f95-a576-ababde1f1e50"
+  - cd packages/api && yarn test:api

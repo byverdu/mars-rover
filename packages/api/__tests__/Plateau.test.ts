@@ -4,7 +4,7 @@ import { plateauData } from './mockData';
 describe('Plateau model', () => {
   const { plateau, uuid, name, size, rovers } = plateauData;
   beforeAll(async () => {
-    await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db', {
+    await mongoose.connect(global.__MONGO_URI__, {
       useNewUrlParser: true
     });
   });

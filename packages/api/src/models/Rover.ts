@@ -25,6 +25,10 @@ const RoverSchema: mongoose.Schema = new mongoose.Schema({
       y: { type: Number, required: true }
     }
   },
+  stepsToNextPosition: {
+    steps: { type: Array, required: true },
+    source: { type: String, required: true }
+  },
   status: { type: String, required: true },
   dateCreation: { type: Date, required: false },
   modifiedAt: { type: Date, required: false }

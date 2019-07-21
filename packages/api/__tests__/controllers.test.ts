@@ -6,7 +6,7 @@ const request = require('supertest');
 
 describe('Api Routes', () => {
   beforeAll(async () => {
-    await mongoose.connect('mongodb://127.0.0.1:27017/mars-rover_db', {
+    await mongoose.connect(global.__MONGO_URI__, {
       useNewUrlParser: true
     });
   });
@@ -47,7 +47,7 @@ describe('Api Routes', () => {
         .expect('Content-Type', 'application/json; charset=utf-8')
         .expect(function (res: Response) {
           expect(res.body).toEqual({
-            plateau: []
+            plateau: expect.any(Array)
           });
         })
         .expect(200, done);
