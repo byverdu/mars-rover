@@ -5,12 +5,13 @@
   "author": "byverdu <byverdu@gmail.com>",
   "homepage": "https://github.com/byverdu/mars-rover#readme",
   "license": "ISC",
-  "main": "lib/server.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "scripts": {
+    "start:api": "node lib/index.js",
     "lint": "./node_modules/.bin/eslint . --ext .ts,.tsx",
     "tsc": "tsc",
     "test:api:watch": "jest --config=jest.config.js __tests__ --watchAll",
@@ -27,7 +28,7 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "post-commit": "npm run lint",
-      "pre-push": "CI=true && npm run lint"
+      "pre-push": "CI=true && npm run lint && yarn test:api"
     }
   },
   "files": [
