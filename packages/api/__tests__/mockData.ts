@@ -13,10 +13,11 @@ const lastKnownPosition: IRoverPosition = {
     x: 0,
     y: 0
   },
-  position: EnumCardinalPoints.N
+  position: EnumCardinalPoints.N,
+  rawFormat: '0 0 N'
 };
 const stepsToNextPosition = {
-  steps: [{axis: {x: 1, y: 1}, position: EnumCardinalPoints.N}],
+  steps: ['0 0 E'],
   source: 'RMLM'
 }
 const status: EnumRoverStatus = EnumRoverStatus.sleep;
