@@ -10,9 +10,8 @@ describe('Plateau model', () => {
   });
 
   afterAll(async () => {
-    mongoose.connection.db.dropDatabase( () => {
-      mongoose.connection.close();
-    });
+    await mongoose.connection.db.dropDatabase();
+    await mongoose.connection.close();
   });
 
   it('Should have an uuid property', async () => {

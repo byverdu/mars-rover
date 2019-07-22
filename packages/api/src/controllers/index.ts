@@ -4,7 +4,8 @@ import { MongoError } from 'mongodb';
 import { IPlateau, IRover } from '../types/Interfaces';
 import { v4 } from 'uuid';
 import Rover from '../models/Rover';
-import { EnumRoverStatus } from '../types/enums';
+import { EnumRoverStatus, EnumCardinalPoints } from '../types/enums';
+import utils from '../utils';
 
 export function getHealthCheck(req: Request, res: Response) {
   res.status(200);
@@ -31,20 +32,39 @@ export function getPlateau(req: Request, res: Response) {
 }
 
 export function postPlateau(req: Request, res: Response) {
-  const { plateauSize } = req.body;
+  const plateauSize = req.body.plateauSize.split('x');
   const uuidPlateau = v4();
-  const rovers: IRover[] = Object.values(req.body.rovers).map((item: any) => {
+  const rovers: IRover[] = req.body.rovers.map((item: any) => {
+    const position = item.position.split(' ');
+    const newPosition = utils
+      .convertSourceInToCoords(item.position, item.steps)
+      .pop()
+      .split(' ');
+
     return new Rover({
       uuid: v4(),
       uuidPlateau,
       lastKnownPosition: {
+        rawFormat: `${position.join(' ')}`,
         axis: {
-          x: item.axis.x,
-          y: item.axis.y
+          x: position[0],
+          y: position[1]
         },
-        position: item.position
+        position: position[2]
       },
-      status: EnumRoverStatus.sleep
+      newPosition: {
+        rawFormat: `${newPosition.join(' ')}`,
+        axis: {
+          x: Number(newPosition[0]),
+          y: Number(newPosition[1])
+        },
+        position: newPosition[2] as EnumCardinalPoints
+      },
+      status: EnumRoverStatus.sleep,
+      stepsToNextPosition: {
+        steps: utils.convertSourceInToCoords(item.position, item.steps),
+        source: item.steps
+      }
     });
   });
 
@@ -52,8 +72,8 @@ export function postPlateau(req: Request, res: Response) {
     uuid: uuidPlateau,
     name: 'Mars',
     size: {
-      width: plateauSize.width,
-      height: plateauSize.height
+      width: plateauSize[0],
+      height: plateauSize[1]
     },
     rovers
   });

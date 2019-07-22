@@ -12,8 +12,9 @@ export interface IRover extends mongoose.Document {
   uuid: string;
   uuidPlateau: string;
   lastKnownPosition: IRoverPosition;
+  newPosition: IRoverPosition;
   stepsToNextPosition: {
-    steps: IRoverPosition[];
+    steps: string[];
     source: string;
   };
   status: EnumRoverStatus;
@@ -24,6 +25,7 @@ export interface IRover extends mongoose.Document {
 export interface IRoverPosition {
   axis: ICoords;
   position: EnumCardinalPoints;
+  rawFormat: string;
 }
 
 export interface IArea {

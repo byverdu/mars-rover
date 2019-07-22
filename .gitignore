@@ -6,3 +6,4 @@ packages/*/lib
 .history
 yarn-error.log
 packages/**/coverage
+.DS_STORE
