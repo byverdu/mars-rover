@@ -9,7 +9,7 @@ const fs = require('fs');
 
 interface Utils {
   getContentForRoutes: () => Promise<any>;
-  postPlateau: (plateauPayload: IPlateauPayload, plateau: IPlateau[]) => any;
+  postPlateau: (data: IPlateau[], plateauPayload: IPlateauPayload) => any;
 }
 
 const readFileAsync = promisify(fs.readFile);
@@ -21,10 +21,11 @@ const getPathToJsonMock = fileName => {
 };
 
 export const utils: Utils = {
-  postPlateau: (plateauPayload: IPlateauPayload, plateau: IPlateau[]) => {
-    const plateauSize = plateauPayload.plateauSize.split('x');
+  postPlateau: (data: IPlateau[], {plateauSize, rovers}: IPlateauPayload) => {
+      console.log(plateauSize, 'inside utils file')
+    const tempPlateau = plateauSize.split('x');
     const uuidPlateau = v4();
-    const rovers: IRover[] = plateauPayload.rovers.map((item: IRoverPositionPayload) => {
+    const tempRovers: IRover[] = rovers.map((item: IRoverPositionPayload) => {
       const position = item.position.split(' ');
       const newPosition = apiUtils
         .convertSourceInToCoords(item.position, item.steps)
@@ -62,15 +63,15 @@ export const utils: Utils = {
       uuid: uuidPlateau,
       name: 'Mars',
       size: {
-        width: Number(plateauSize[0]),
-        height: Number(plateauSize[1])
+        width: Number(tempPlateau[0]),
+        height: Number(tempPlateau[1])
       },
-      rovers
+      rovers: tempRovers
     };
 
-    plateau = [newPlateau]
+    data = [newPlateau]
 
-    return plateau;
+    return data;
   },
   getContentForRoutes: () => {
     let count = 0;

@@ -30,6 +30,7 @@ function createApp(routes) {
 
   server.post(EnumApiRoutes.postPlateau, (req: Request, res: Response) => {
     const {plateauSize, rovers} = req.body;
+    console.log(req.body)
     const plateau = db.get('plateau')
       .postPlateau({plateauSize, rovers} as IPlateauPayload)
       .value();
