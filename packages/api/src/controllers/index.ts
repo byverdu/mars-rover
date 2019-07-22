@@ -45,6 +45,7 @@ export function postPlateau(req: Request, res: Response) {
       uuid: v4(),
       uuidPlateau,
       lastKnownPosition: {
+        rawFormat: `${position.join(' ')}`,
         axis: {
           x: position[0],
           y: position[1]
@@ -52,6 +53,7 @@ export function postPlateau(req: Request, res: Response) {
         position: position[2]
       },
       newPosition: {
+        rawFormat: `${newPosition.join(' ')}`,
         axis: {
           x: Number(newPosition[0]),
           y: Number(newPosition[1])

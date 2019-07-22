@@ -78,6 +78,7 @@ describe('Api Routes', () => {
               },
               rovers: [{
                 lastKnownPosition: {
+                  rawFormat: '3 3 N',
                   position: 'N',
                   axis: {
                     x: 3,
@@ -85,6 +86,7 @@ describe('Api Routes', () => {
                   },
                 },
                 newPosition: {
+                  rawFormat: '3 5 E',
                   position: 'E',
                   axis: {
                     x: 3,
@@ -100,6 +102,7 @@ describe('Api Routes', () => {
               },
               {
                 lastKnownPosition: {
+                  rawFormat: '2 2 S',
                   position: 'S',
                   axis: {
                     x: 2,
@@ -107,6 +110,7 @@ describe('Api Routes', () => {
                   },
                 },
                 newPosition: {
+                  rawFormat: '3 2 S',
                   position: 'S',
                   axis: {
                     x: 3,

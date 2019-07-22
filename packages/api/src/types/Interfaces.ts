@@ -25,6 +25,7 @@ export interface IRover extends mongoose.Document {
 export interface IRoverPosition {
   axis: ICoords;
   position: EnumCardinalPoints;
+  rawFormat: string;
 }
 
 export interface IArea {

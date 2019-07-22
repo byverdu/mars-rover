@@ -19,6 +19,7 @@ const RoverSchema: mongoose.Schema = new mongoose.Schema({
   uuid: { type: String, required: true, unique: true },
   uuidPlateau: { type: String, required: true, unique: true },
   lastKnownPosition: {
+    rawFormat: { type: String },
     position: { type: String, required: true },
     axis: {
       x: { type: Number, required: true },
@@ -26,6 +27,7 @@ const RoverSchema: mongoose.Schema = new mongoose.Schema({
     }
   },
   newPosition: {
+    rawFormat: { type: String },
     position: { type: String },
     axis: {
       x: { type: Number },
