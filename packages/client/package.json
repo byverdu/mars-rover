@@ -25,13 +25,16 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev-server": "./node_modules/.bin/ts-node --skip-project  ./mock-server --delay 500ms",
+    "dev": "concurrently \"npm run start\" \"npm run dev-server\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,5 +57,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/express-serve-static-core": "^4.16.7",
+    "concurrently": "^4.1.1",
+    "json-server": "^0.15.0",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0"
   }
 }
