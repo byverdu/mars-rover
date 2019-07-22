@@ -25,6 +25,13 @@ const RoverSchema: mongoose.Schema = new mongoose.Schema({
       y: { type: Number, required: true }
     }
   },
+  newPosition: {
+    position: { type: String },
+    axis: {
+      x: { type: Number },
+      y: { type: Number }
+    }
+  },
   stepsToNextPosition: {
     steps: { type: Array, required: true },
     source: { type: String, required: true }

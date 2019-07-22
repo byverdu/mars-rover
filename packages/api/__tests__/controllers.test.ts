@@ -1,6 +1,5 @@
 import * as mongoose from 'mongoose';
 import app from '../src/app';
-import { plateauPayloadData, plateauData } from './mockData';
 
 const request = require('supertest');
 
@@ -58,7 +57,13 @@ describe('Api Routes', () => {
     it('responds with a json file', function (done) {
       request(app)
         .post('/api/plateau/launch-rovers')
-        .send(plateauPayloadData)
+        .send({
+          plateauSize: '7x7',
+          rovers: [
+            { position: '3 3 N', steps: 'MMR' },
+            { position: '2 2 S', steps: 'LMR' }
+          ]
+        })
         .set('Accept', 'application/json')
         .expect('Content-Type', 'application/json; charset=utf-8')
         .expect(function (res: Response) {
@@ -68,30 +73,52 @@ describe('Api Routes', () => {
               uuid,
               name: 'Mars',
               size: {
-                width: 5,
-                height: 5
+                width: 7,
+                height: 7
               },
               rovers: [{
                 lastKnownPosition: {
                   position: 'N',
                   axis: {
-                    x: 1,
-                    y: 1
+                    x: 3,
+                    y: 3
+                  },
+                },
+                newPosition: {
+                  position: 'E',
+                  axis: {
+                    x: 3,
+                    y: 5
                   },
                 },
                 uuidPlateau: uuid,
-                status: 'sleep'
+                status: 'sleep',
+                stepsToNextPosition: {
+                  steps: [ '3 4 N', '3 5 N', '3 5 E' ],
+                  source: 'MMR'
+                }
               },
               {
                 lastKnownPosition: {
-                  position: 'N',
+                  position: 'S',
                   axis: {
                     x: 2,
                     y: 2
                   },
                 },
+                newPosition: {
+                  position: 'S',
+                  axis: {
+                    x: 3,
+                    y: 2
+                  },
+                },
                 uuidPlateau: uuid,
-                status: 'sleep'
+                status: 'sleep',
+                stepsToNextPosition: {
+                  steps: [ '2 2 E', '3 2 E', '3 2 S' ],
+                  source: 'LMR'
+                }
               }]
             }
           });

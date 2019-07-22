@@ -16,6 +16,7 @@ EXPOSE 9000 9229
 COPY lerna.json .
 COPY tsconfig.json .
 RUN lerna bootstrap
-RUN lerna run tsc
+
+COPY ./packages/api/lib /usr/src/app/packages/api/lib
 
 CMD cd ./packages/api && yarn start:api

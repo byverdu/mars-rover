@@ -12,8 +12,9 @@ export interface IRover extends mongoose.Document {
   uuid: string;
   uuidPlateau: string;
   lastKnownPosition: IRoverPosition;
+  newPosition: IRoverPosition;
   stepsToNextPosition: {
-    steps: IRoverPosition[];
+    steps: string[];
     source: string;
   };
   status: EnumRoverStatus;

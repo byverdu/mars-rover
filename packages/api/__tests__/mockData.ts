@@ -66,31 +66,4 @@ const plateauData = {
   rovers
 };
 
-// Controllers
-
-const plateauPayloadData = {
-  plateauSize: {
-    width: 5,
-    height: 5
-  },
-  rovers: {
-    0: {
-      axis: {
-        x: 1,
-        y: 1
-      },
-      position: 'N',
-      moveSequence: 'LMRM'
-    },
-    1: {
-      axis: {
-        x: 2,
-        y: 2
-      },
-      position: 'N',
-      moveSequence: 'LMLMLM'
-    }
-  }
-};
-
-export { roverData, plateauData, plateauPayloadData };
+export { roverData, plateauData };
