@@ -41,7 +41,7 @@
     "test:client": "jest --config=jest.config.js",
     "test:nocache": "jest --no-cache",
     "eject": "react-scripts eject",
-    "dev-server": "./node_modules/.bin/ts-node --skip-project  ./mock-server --delay 500ms",
+    "dev-server": "nodemon --exec node --inspect=0.0.0.0 ./node_modules/.bin/ts-node --skip-project  ./mock-server --delay 500ms",
     "dev": "concurrently \"npm run start\" \"npm run dev-server\"",
     "build-css": "node-sass-chokidar src/ -o src/"
   },
