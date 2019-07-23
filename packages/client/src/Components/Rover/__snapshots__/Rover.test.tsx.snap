@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rover /> should create a snapshot 1`] = `
+<Rover
+  axis="x0:y0"
+  direction="N"
+  status="sleep"
+>
+  <div
+    className="rover sleep"
+    data-axis="x0:y0"
+    data-direction="N"
+  />
+</Rover>
+`;

@@ -10,7 +10,7 @@ interface DetailsInputProps {
   title: string
 }
 
-const DetailsInput: React.FC<DetailsInputProps> = ({title, children}) => {
+const DetailsInput: React.FC<DetailsInputProps> = ({ title, children }) => {
   return (
     <details>
       <summary>{title}</summary>
@@ -39,8 +39,8 @@ const DetailsInputRover: React.FC = () => (
 
 const App: React.FC = () => {
   useEffect(() => {
-    axios.get(EnumApiRoutes.getPlateau)
-      .then(resp => console.log(resp.data))
+    axios.get('/api/plateau/')
+      .then(resp => console.log(resp.data, 'oi'))
   })
   return (
     <div className="App">
@@ -63,25 +63,25 @@ const App: React.FC = () => {
           e.preventDefault();
 
           const plateauSize = Array.from(document.querySelectorAll('.plateau-data input'));
-          
+
           const width = (plateauSize.find(input => (input as HTMLInputElement).name === 'width') as HTMLInputElement).value;
-          
+
           const height = (plateauSize.find(input => (input as HTMLInputElement).name === 'height') as HTMLInputElement).value;
-          
+
           const tempRovers = Array.from(document.querySelectorAll('.rover-data input'));
-          
+
           const position = (tempRovers.find(input => (input as HTMLInputElement).name === 'position') as HTMLInputElement).value;
-          
-          const steps = (tempRovers.find(input =>  (input as HTMLInputElement).name === 'steps') as HTMLInputElement).value;
+
+          const steps = (tempRovers.find(input => (input as HTMLInputElement).name === 'steps') as HTMLInputElement).value;
 
           console.log(position, steps, height, width);
 
-            axios.post(EnumApiRoutes.postPlateau, {
-              plateauSize: `${width}x${height}`,
-              rovers: [
-                {position, steps}
-              ]
-            });
+          axios.post(EnumApiRoutes.postPlateau, {
+            plateauSize: `${width}x${height}`,
+            rovers: [
+              { position, steps }
+            ]
+          });
         }}>Set Data</button>
       </header>
       <section>
