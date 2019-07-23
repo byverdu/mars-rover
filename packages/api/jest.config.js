@@ -1,4 +1,5 @@
 module.exports = {
+  displayName: 'Api Unit Tests',
   globalSetup: './jest/setup',
   preset: 'ts-jest',
   globalTeardown: './jest/teardown.js',
