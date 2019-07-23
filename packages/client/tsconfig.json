@@ -9,7 +9,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
@@ -22,6 +22,6 @@
     "downlevelIteration": true
   },
   "include": [
-    "src"
+    "src", "tsconfig.test.json"
   ]
 }
