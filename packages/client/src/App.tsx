@@ -6,7 +6,7 @@ import axios from 'axios';
 const App: React.FC = () => {
   useEffect(() => {
     axios.get('/api/plateau/')
-      .then(resp => console.log(resp.data))
+      .then(resp => console.log(resp.data, 'oi'))
   })
   return (
     <div className="App">

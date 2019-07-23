@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PlateauSquare /> should create a snapshot 1`] = `
+<PlateauSquare
+  axis="x0:y0"
+  empty={true}
+>
+  <div
+    className="tile empty"
+    data-axis="x0:y0"
+  />
+</PlateauSquare>
+`;
