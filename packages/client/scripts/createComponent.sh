@@ -18,7 +18,7 @@ export default "$componentName"" >> src/Components/$componentName/index.tsx
 # Create test file with mimimal structure
 echo "import React from 'react';
 import "$componentName", { "$componentName"Props } from './index';
-import enzyme, { mount } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 const props: "$componentName"Props = {
@@ -26,9 +26,13 @@ const props: "$componentName"Props = {
 };
 
 describe('<"$componentName" />', () => {
-  const wrapper: enzyme.CommonWrapper = mount(<"$componentName" />);
+  const wrapper = mount(<"$componentName" {...props} />);
 
   it('should create a snapshot', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should a title props', () => {
+    expect((wrapper.props() as "$componentName"Props).title).toEqual();
   });
 });" >> src/Components/$componentName/$componentName.test.tsx
