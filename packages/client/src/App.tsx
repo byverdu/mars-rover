@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import axios from 'axios';
@@ -9,48 +9,60 @@ import { IPlateauPayload } from './Models/Interfaces';
 
 // https://codepen.io/giana/pen/OrpdLK
 
-const App: React.FC = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    // (async () => {
-    //   const result = await axios.get('/api/plateau/');
-      
-    //   setData(result.data);
-    //   console.log(data)
-    // })();
-  }, [data]);
-
-  const postPlateau = (data: IPlateauPayload) => {
-    axios.post(EnumApiRoutes.postPlateau, data)
-      .then(resp => setData(resp))
-      .catch(err => console.log(err))
-      .finally(() => console.log(data))
-  }
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        {data && data.plateau.name}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <section>
-      <DetailsWrapper
-        submitData={postPlateau}
-        {...detailsWrapperText}
-      />
-      </section>
-    </div>
-  );
+interface AppState {
+  data: any;
 }
 
-export default App;
+export default class App extends Component<{}, AppState> {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: null
+    }
+  }
+
+  async componentDidMount() {
+    const result = await axios.get(EnumApiRoutes.getPlateau);
+
+    this.setState({
+      data: result.data[0]
+    });
+  }
+
+  postPlateau = async (data: IPlateauPayload) => {
+    const result = await axios.post(EnumApiRoutes.postPlateau, data)
+
+    this.setState({
+      data: result.data[0]
+    });
+  }
+
+  render() {
+    const {data} = this.state;
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+          {data && data.name}
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+        <section>
+        <DetailsWrapper
+          submitData={this.postPlateau}
+          {...detailsWrapperText}
+        />
+        </section>
+      </div>
+    );
+  }
+}
