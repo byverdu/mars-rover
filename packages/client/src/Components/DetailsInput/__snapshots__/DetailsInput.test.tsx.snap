@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailsInput /> should create a snapshot 1`] = `
+<DetailsInput
+  title="Set Plateau Size"
+>
+  <details>
+    <summary>
+      Set Plateau Size
+    </summary>
+    <div
+      className="details-wrapper"
+    >
+      <div
+        className="details-styling"
+      >
+        <input />
+      </div>
+    </div>
+  </details>
+</DetailsInput>
+`;
