@@ -31,7 +31,7 @@ describe('<DetailsWrapper />', () => {
 
   it('should display the proper text for each DetailsInput component', () => {
     expect(wrapper.find('DetailsInput').first().text()).toEqual(props.plateauTitle);
-    expect(wrapper.find('DetailsInput').last().text()).toEqual(props.roverTitle);
+    expect(wrapper.find('DetailsInput summary').last().text()).toEqual(props.roverTitle);
   });
 
   it('should set the plateau width properly', () => {

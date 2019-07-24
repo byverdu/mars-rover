@@ -1,42 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import './DetailsWrapper.scss';
 import DetailsInput from '../DetailsInput';
-import { IPlateauPayload } from '../../Models/Interfaces';
+import DetailsRover from '../DetailsRover';
+import { IPlateauPayload, IRoverPositionPayload } from '../../Models/Interfaces';
+import { renderPlateauInfo, renderRoverPosition, renderRoverNextSteps } from '../Renderers';
 
 export interface DetailsWrapperProps {
   plateauTitle: string;
   roverTitle: string;
   submitData: (data: IPlateauPayload) => void;
-}
-
-const renderPlateauInfo = (plateauWidth, plateauHeight) => {
-  if (plateauWidth > 0 || plateauHeight > 0) {
-    return (
-      <h3>Plateau size {plateauWidth} x {plateauHeight}</h3>
-    );
-  }
-
-  return null;
-}
-
-const renderRoverPosition = (position: string) => {
-  if (position.length > 0) {
-    return (
-      <h3>Initial Rover Position: {position}</h3>
-    );
-  }
-
-  return null;
-}
-
-const renderRoverNextSteps = (steps: string) => {
-  if (steps.length > 0) {
-    return (
-      <h3>Next Steps: {steps}</h3>
-    );
-  }
-
-  return null;
 }
 
 const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
@@ -47,14 +19,20 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
 
   const [plateauWidth, setPlateauWidth] = useState(0);
   const [plateauHeight, setPlateauHeight] = useState(0);
-  const [roverPosition, setRoverPosition] = useState('');
-  const [roverNextSteps, setRoverNextSteps] = useState('');
+  // const [roverPosition, setRoverPosition] = useState('');
+  // const [roverNextSteps, setRoverNextSteps] = useState('');
+  const [rovers, setRovers] = useState([]);
+
+  const setRoverDataHandler = ({ position, steps }: IRoverPositionPayload) => {
+    const tempRovers = [...rovers, { position, steps }];
+
+    setRovers(tempRovers)
+  }
 
   return (
     <Fragment>
       {renderPlateauInfo(plateauWidth, plateauHeight)}
-      {renderRoverPosition(roverPosition)}
-      {renderRoverNextSteps(roverNextSteps)}
+
       <div className="container collapse">
         <DetailsInput title={plateauTitle}>
           <section className="plateau-data">
@@ -77,7 +55,16 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
           </section>
         </DetailsInput>
       </div>
+      {/* <div className="add-plateau">
+        <button>Set Rover Data</button>
+      </div> */}
       <div className="container collapse">
+        <DetailsRover
+          title={roverTitle}
+          setRoverDataHandler={setRoverDataHandler}
+        />
+        {/* {renderRoverPosition(roverPosition)}
+        {renderRoverNextSteps(roverNextSteps)}
         <DetailsInput title={roverTitle}>
           <section className="rover-data">
             <input
@@ -98,16 +85,22 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
                 (e: React.ChangeEvent<HTMLInputElement>) => setRoverNextSteps(e.target.value)
               }
             />
+            <button
+              onClick={() => {
+                const tempRovers = [...rovers, { position: roverPosition, steps: roverNextSteps }];
+
+                setRovers(tempRovers)
+              }}
+            >Add Rover</button>
+
           </section>
-        </DetailsInput>
+        </DetailsInput> */}
       </div>
       <button onClick={(e) => {
         e.preventDefault();
         submitData({
           plateauSize: `${plateauWidth}x${plateauHeight}`,
-          rovers: [
-            { position: roverPosition, steps: roverNextSteps }
-          ]
+          rovers
         })
 
       }}>Set Data</button>

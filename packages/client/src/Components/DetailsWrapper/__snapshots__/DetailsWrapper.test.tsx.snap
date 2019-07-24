@@ -76,6 +76,11 @@ exports[`<DetailsWrapper /> should create a snapshot 1`] = `
                 type="text"
                 value=""
               />
+              <button
+                onClick={[Function]}
+              >
+                Add Rover
+              </button>
             </section>
           </div>
         </div>
