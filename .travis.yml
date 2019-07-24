@@ -32,4 +32,4 @@ after_success:
 script:
   - yarn install
   - lerna bootstrap
-  - cd packages/api && yarn test:api
+  - yarn test
