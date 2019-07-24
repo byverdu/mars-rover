@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailsWrapper /> should create a snapshot 1`] = `
+<DetailsWrapper
+  plateauTitle="Set Plateau Size"
+  roverTitle="Set Rover Position"
+>
+  <div
+    className="container collapse"
+  >
+    <DetailsInput
+      title="Set Plateau Size"
+    >
+      <details>
+        <summary>
+          Set Plateau Size
+        </summary>
+        <div
+          className="details-wrapper"
+        >
+          <div
+            className="details-styling"
+          >
+            <section
+              className="plateau-data"
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Set Width"
+                type="number"
+                value={0}
+              />
+              <input
+                onChange={[Function]}
+                placeholder="Set Height"
+                type="number"
+                value={0}
+              />
+            </section>
+          </div>
+        </div>
+      </details>
+    </DetailsInput>
+  </div>
+  <div
+    className="container collapse"
+  >
+    <DetailsInput
+      title="Set Rover Position"
+    >
+      <details>
+        <summary>
+          Set Rover Position
+        </summary>
+        <div
+          className="details-wrapper"
+        >
+          <div
+            className="details-styling"
+          >
+            <section
+              className="rover-data"
+            >
+              <input
+                name="position"
+                onChange={[Function]}
+                placeholder="Set Rover Coords"
+                type="text"
+                value=""
+              />
+              <input
+                name="steps"
+                onChange={[Function]}
+                placeholder="Set Rover Steps"
+                type="text"
+                value=""
+              />
+            </section>
+          </div>
+        </div>
+      </details>
+    </DetailsInput>
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Set Data
+  </button>
+</DetailsWrapper>
+`;
