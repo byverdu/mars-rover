@@ -22,6 +22,10 @@
     "downlevelIteration": true
   },
   "include": [
-    "src", "tsconfig.test.json"
+    "src",
+    "tsconfig.test.json"
+  ],
+  "exclude": [
+    "src/coverage"
   ]
 }
