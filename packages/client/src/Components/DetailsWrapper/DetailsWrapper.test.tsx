@@ -2,11 +2,11 @@ import React from 'react';
 import DetailsWrapper, { DetailsWrapperProps } from './index';
 import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ReactTestUtils from 'react-dom/test-utils';
 
 const props: DetailsWrapperProps = {
   plateauTitle: 'Set Plateau Size',
-  roverTitle: 'Set Rover Position'
+  roverTitle: 'Set Rover Position',
+  submitData: () => {}
 };
 
 describe('<DetailsWrapper />', () => {

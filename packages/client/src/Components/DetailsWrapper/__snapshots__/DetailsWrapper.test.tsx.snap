@@ -4,6 +4,7 @@ exports[`<DetailsWrapper /> should create a snapshot 1`] = `
 <DetailsWrapper
   plateauTitle="Set Plateau Size"
   roverTitle="Set Rover Position"
+  submitData={[Function]}
 >
   <div
     className="container collapse"
