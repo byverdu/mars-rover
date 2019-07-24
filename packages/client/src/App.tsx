@@ -3,51 +3,36 @@ import logo from './logo.svg';
 import './App.scss';
 import axios from 'axios';
 import { EnumApiRoutes } from './Models/enums';
+import DetailsWrapper from './Components/DetailsWrapper';
+import { detailsWrapperText } from './config';
+import { IPlateauPayload } from './Models/Interfaces';
 
 // https://codepen.io/giana/pen/OrpdLK
 
-interface DetailsInputProps {
-  title: string
-}
-
-const DetailsInput: React.FC<DetailsInputProps> = ({ title, children }) => {
-  return (
-    <details>
-      <summary>{title}</summary>
-      {children}
-    </details>
-  )
-};
-
-const DetailsInputPlateau: React.FC = () => (
-  <DetailsInput title="Set Plateau Size">
-    <section className="plateau-data">
-      <input type="number" name="width" placeholder="Set Width" />
-      <input type="number" name="height" placeholder="Set Height" />
-    </section>
-  </DetailsInput>
-);
-
-const DetailsInputRover: React.FC = () => (
-  <DetailsInput title="Set Rover Data">
-    <section className="rover-data">
-      <input type="text" name="position" placeholder="Set Rover Coords" />
-      <input type="text" name="steps" placeholder="Set Rover Steps" />
-    </section>
-  </DetailsInput>
-);
-
 const App: React.FC = () => {
+  const [data, setData] = useState(null);
+
   useEffect(() => {
-    axios.get('/api/plateau/')
-      .then(resp => console.log(resp.data, 'oi'))
-  })
+    // (async () => {
+    //   const result = await axios.get('/api/plateau/');
+      
+    //   setData(result.data);
+    //   console.log(data)
+    // })();
+  }, [data]);
+
+  const postPlateau = (data: IPlateauPayload) => {
+    axios.post(EnumApiRoutes.postPlateau, data)
+      .then(resp => setData(resp))
+      .catch(err => console.log(err))
+      .finally(() => console.log(data))
+  }
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+        {data && data.plateau.name}
         </p>
         <a
           className="App-link"
@@ -57,34 +42,12 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
-        <DetailsInputPlateau />
-        <DetailsInputRover />
-        <button onClick={(e) => {
-          e.preventDefault();
-
-          const plateauSize = Array.from(document.querySelectorAll('.plateau-data input'));
-
-          const width = (plateauSize.find(input => (input as HTMLInputElement).name === 'width') as HTMLInputElement).value;
-
-          const height = (plateauSize.find(input => (input as HTMLInputElement).name === 'height') as HTMLInputElement).value;
-
-          const tempRovers = Array.from(document.querySelectorAll('.rover-data input'));
-
-          const position = (tempRovers.find(input => (input as HTMLInputElement).name === 'position') as HTMLInputElement).value;
-
-          const steps = (tempRovers.find(input => (input as HTMLInputElement).name === 'steps') as HTMLInputElement).value;
-
-          console.log(position, steps, height, width);
-
-          axios.post(EnumApiRoutes.postPlateau, {
-            plateauSize: `${width}x${height}`,
-            rovers: [
-              { position, steps }
-            ]
-          });
-        }}>Set Data</button>
       </header>
       <section>
+      <DetailsWrapper
+        submitData={postPlateau}
+        {...detailsWrapperText}
+      />
       </section>
     </div>
   );
