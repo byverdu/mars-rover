@@ -5,7 +5,8 @@ import toJson from 'enzyme-to-json';
 
 const props: PlateauSquareProps = {
   axis: 'x0:y0',
-  empty: true
+  empty: true,
+  willBeBusy: true
 };
 
 describe('<PlateauSquare />', () => {
@@ -15,7 +16,7 @@ describe('<PlateauSquare />', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('should know it\'s position on the grid', () => {
+  it("should know it's position on the grid", () => {
     expect((wrapper.props() as PlateauSquareProps).axis).toEqual('x0:y0');
   });
 
@@ -24,7 +25,8 @@ describe('<PlateauSquare />', () => {
   });
 
   it('should set the dataset attribute on the html element', () => {
-    expect(wrapper.getDOMNode().attributes.getNamedItem('data-axis').value)
-      .toEqual('x0:y0');
+    expect(
+      wrapper.getDOMNode().attributes.getNamedItem('data-axis').value
+    ).toEqual('x0:y0');
   });
 });

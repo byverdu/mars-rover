@@ -62,20 +62,97 @@ exports[`<DetailsWrapper /> should create a snapshot 1`] = `
             <section
               className="rover-data"
             >
-              <input
-                name="position"
-                onChange={[Function]}
-                placeholder="Set Rover Coords"
-                type="text"
-                value=""
-              />
-              <input
-                name="steps"
-                onChange={[Function]}
-                placeholder="Set Rover Steps"
-                type="text"
-                value=""
-              />
+              <CoordsDropdown
+                height={0}
+                setRoverPosition={[Function]}
+                width={0}
+              >
+                <div
+                  className="wrapper"
+                >
+                  <h5
+                    onClick={[Function]}
+                  >
+                    Set Rover Coords
+                  </h5>
+                  <div
+                    className="items show"
+                  >
+                    <div
+                      className="coords"
+                      style={
+                        Object {
+                          "width": "0px",
+                        }
+                      }
+                    />
+                    <div
+                      className="cardinals"
+                    >
+                      <span
+                        className="item-cardinals"
+                        key="N"
+                        onClick={[Function]}
+                      >
+                        N
+                      </span>
+                      <span
+                        className="item-cardinals"
+                        key="S"
+                        onClick={[Function]}
+                      >
+                        S
+                      </span>
+                      <span
+                        className="item-cardinals"
+                        key="E"
+                        onClick={[Function]}
+                      >
+                        E
+                      </span>
+                      <span
+                        className="item-cardinals"
+                        key="W"
+                        onClick={[Function]}
+                      >
+                        W
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </CoordsDropdown>
+              <NextSteps
+                initialPosition=""
+                outOfBoundaries={0}
+                setRoverNextSteps={[Function]}
+              >
+                <div>
+                  <h5>
+                    Set Rover Next Steps
+                  </h5>
+                  <button
+                    data-step="L"
+                    key="L"
+                    onClick={[Function]}
+                  >
+                    L
+                  </button>
+                  <button
+                    data-step="M"
+                    key="M"
+                    onClick={[Function]}
+                  >
+                    M
+                  </button>
+                  <button
+                    data-step="R"
+                    key="R"
+                    onClick={[Function]}
+                  >
+                    R
+                  </button>
+                </div>
+              </NextSteps>
               <button
                 onClick={[Function]}
               >

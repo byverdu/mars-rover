@@ -1,0 +1,640 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> should create a snapshot 1`] = `
+<CoordsDropdown
+  height={8}
+  setRoverPosition={[Function]}
+  width={8}
+>
+  <div
+    className="wrapper"
+  >
+    <h5
+      onClick={[Function]}
+    >
+      Set Rover Coords
+    </h5>
+    <div
+      className="items show"
+    >
+      <div
+        className="coords"
+        style={
+          Object {
+            "width": "800px",
+          }
+        }
+      >
+        <span
+          className="item-coords"
+          key="0.45810798820643117"
+          onClick={[Function]}
+        >
+          0
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.9817995300988851"
+          onClick={[Function]}
+        >
+          1
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.4909886058827777"
+          onClick={[Function]}
+        >
+          2
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.9781534071690328"
+          onClick={[Function]}
+        >
+          3
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.11679150350611178"
+          onClick={[Function]}
+        >
+          4
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.852791258553534"
+          onClick={[Function]}
+        >
+          5
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.1418337111994432"
+          onClick={[Function]}
+        >
+          6
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.5598521761648336"
+          onClick={[Function]}
+        >
+          7
+           
+          7
+        </span>
+        <span
+          className="item-coords"
+          key="0.11677213673316422"
+          onClick={[Function]}
+        >
+          0
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.8709437187951041"
+          onClick={[Function]}
+        >
+          1
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.5444569535329131"
+          onClick={[Function]}
+        >
+          2
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.8980627259391771"
+          onClick={[Function]}
+        >
+          3
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.9820020347693765"
+          onClick={[Function]}
+        >
+          4
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.07598781579612623"
+          onClick={[Function]}
+        >
+          5
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.18508839811910294"
+          onClick={[Function]}
+        >
+          6
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.6876568258445179"
+          onClick={[Function]}
+        >
+          7
+           
+          6
+        </span>
+        <span
+          className="item-coords"
+          key="0.8303671839126581"
+          onClick={[Function]}
+        >
+          0
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.5604754896836568"
+          onClick={[Function]}
+        >
+          1
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.9028865053844859"
+          onClick={[Function]}
+        >
+          2
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.2644005898616779"
+          onClick={[Function]}
+        >
+          3
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.18525167286630162"
+          onClick={[Function]}
+        >
+          4
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.4346455934054694"
+          onClick={[Function]}
+        >
+          5
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.08247733902934207"
+          onClick={[Function]}
+        >
+          6
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.6851395492110175"
+          onClick={[Function]}
+        >
+          7
+           
+          5
+        </span>
+        <span
+          className="item-coords"
+          key="0.7184805115004667"
+          onClick={[Function]}
+        >
+          0
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.690690371062815"
+          onClick={[Function]}
+        >
+          1
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.3342657207507391"
+          onClick={[Function]}
+        >
+          2
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.9748002694167361"
+          onClick={[Function]}
+        >
+          3
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.7908671836509094"
+          onClick={[Function]}
+        >
+          4
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.5997791622193596"
+          onClick={[Function]}
+        >
+          5
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.08044414366778851"
+          onClick={[Function]}
+        >
+          6
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.3034927751069769"
+          onClick={[Function]}
+        >
+          7
+           
+          4
+        </span>
+        <span
+          className="item-coords"
+          key="0.5435762158999076"
+          onClick={[Function]}
+        >
+          0
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.32890138951039605"
+          onClick={[Function]}
+        >
+          1
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.9072398383092446"
+          onClick={[Function]}
+        >
+          2
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.10775763234330049"
+          onClick={[Function]}
+        >
+          3
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.748786149543879"
+          onClick={[Function]}
+        >
+          4
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.11673218483201464"
+          onClick={[Function]}
+        >
+          5
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.5706165858536516"
+          onClick={[Function]}
+        >
+          6
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.5128066624824834"
+          onClick={[Function]}
+        >
+          7
+           
+          3
+        </span>
+        <span
+          className="item-coords"
+          key="0.4415792818906692"
+          onClick={[Function]}
+        >
+          0
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.3058705166907434"
+          onClick={[Function]}
+        >
+          1
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.9232759533316985"
+          onClick={[Function]}
+        >
+          2
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.1530502500913844"
+          onClick={[Function]}
+        >
+          3
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.22720300906716395"
+          onClick={[Function]}
+        >
+          4
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.6204804721704309"
+          onClick={[Function]}
+        >
+          5
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.8333717941588303"
+          onClick={[Function]}
+        >
+          6
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.9084728542558347"
+          onClick={[Function]}
+        >
+          7
+           
+          2
+        </span>
+        <span
+          className="item-coords"
+          key="0.4293601933457183"
+          onClick={[Function]}
+        >
+          0
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.2762147506728603"
+          onClick={[Function]}
+        >
+          1
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.34913677048633507"
+          onClick={[Function]}
+        >
+          2
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.05413472368906036"
+          onClick={[Function]}
+        >
+          3
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.11704247762317155"
+          onClick={[Function]}
+        >
+          4
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.06361758988466137"
+          onClick={[Function]}
+        >
+          5
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.36176954667100425"
+          onClick={[Function]}
+        >
+          6
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.035200803636984634"
+          onClick={[Function]}
+        >
+          7
+           
+          1
+        </span>
+        <span
+          className="item-coords"
+          key="0.48608721129304033"
+          onClick={[Function]}
+        >
+          0
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.712269874220073"
+          onClick={[Function]}
+        >
+          1
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.3344008226106041"
+          onClick={[Function]}
+        >
+          2
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.6197727962406288"
+          onClick={[Function]}
+        >
+          3
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.950624371859424"
+          onClick={[Function]}
+        >
+          4
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.2565674094385719"
+          onClick={[Function]}
+        >
+          5
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.3367145614576035"
+          onClick={[Function]}
+        >
+          6
+           
+          0
+        </span>
+        <span
+          className="item-coords"
+          key="0.5060123102322502"
+          onClick={[Function]}
+        >
+          7
+           
+          0
+        </span>
+      </div>
+      <div
+        className="cardinals"
+      >
+        <span
+          className="item-cardinals"
+          key="N"
+          onClick={[Function]}
+        >
+          N
+        </span>
+        <span
+          className="item-cardinals"
+          key="S"
+          onClick={[Function]}
+        >
+          S
+        </span>
+        <span
+          className="item-cardinals"
+          key="E"
+          onClick={[Function]}
+        >
+          E
+        </span>
+        <span
+          className="item-cardinals"
+          key="W"
+          onClick={[Function]}
+        >
+          W
+        </span>
+      </div>
+    </div>
+  </div>
+</CoordsDropdown>
+`;

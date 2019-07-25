@@ -17,30 +17,37 @@ describe('<Rover />', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('should know it\'s position on the grid', () => {
+  it("should know it's position on the grid", () => {
     expect((wrapper.props() as RoverProps).axis).toEqual('x0:y0');
   });
 
   it('should set the axis dataset attribute on the html element', () => {
-    expect(wrapper.getDOMNode().attributes.getNamedItem('data-axis').value)
-      .toEqual('x0:y0');
+    expect(
+      wrapper.getDOMNode().attributes.getNamedItem('data-axis').value
+    ).toEqual('x0:y0');
   });
 
   it('should know where is facing to', () => {
-    expect((wrapper.props() as RoverProps).direction).toEqual(EnumCardinalPoints.N);
+    expect((wrapper.props() as RoverProps).direction).toEqual(
+      EnumCardinalPoints.N
+    );
   });
 
   it('should set the direction dataset attribute on the html element', () => {
-    expect(wrapper.getDOMNode().attributes.getNamedItem('data-direction').value)
-      .toEqual('N');
+    expect(
+      wrapper.getDOMNode().attributes.getNamedItem('data-direction').value
+    ).toEqual('N');
   });
 
-  it('should know where it\'s status', () => {
-    expect((wrapper.props() as RoverProps).status).toEqual(EnumRoverStatus.sleep);
+  it("should know where it's status", () => {
+    expect((wrapper.props() as RoverProps).status).toEqual(
+      EnumRoverStatus.sleep
+    );
   });
 
   it('should set the direction dataset attribute on the html element', () => {
-    expect(wrapper.getDOMNode().attributes.getNamedItem('class').value)
-      .toEqual('rover sleep');
+    expect(wrapper.getDOMNode().attributes.getNamedItem('class').value).toEqual(
+      'rover sleep rotate-0'
+    );
   });
 });
