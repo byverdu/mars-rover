@@ -30,8 +30,6 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
   const [roverNextSteps, setRoverNextSteps] = useState('');
   const [rovers, setRovers] = useState([]);
 
-  console.log(roverPosition, roverNextSteps);
-
   return (
     <Fragment>
       {renderPlateauInfo(plateauWidth, plateauHeight)}
@@ -74,7 +72,11 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
               width={plateauWidth}
               height={plateauHeight}
             />
-            <NextSteps setRoverNextSteps={setRoverNextSteps} />
+            <NextSteps
+              setRoverNextSteps={setRoverNextSteps}
+              initialPosition={roverPosition}
+              outOfBoundaries={plateauWidth}
+            />
             <button
               onClick={() => {
                 const tempRovers = [
