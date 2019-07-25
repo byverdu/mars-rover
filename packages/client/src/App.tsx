@@ -1,9 +1,10 @@
-import React, { useEffect, useState, Component } from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import axios from 'axios';
-import { EnumApiRoutes } from './Models/enums';
+import { EnumApiRoutes, EnumProxyAddress } from './Models/enums';
 import DetailsWrapper from './Components/DetailsWrapper';
+import Plateau from './Components/Plateau';
 import { detailsWrapperText } from './config';
 import { IPlateauPayload } from './Models/Interfaces';
 
@@ -19,30 +20,34 @@ export default class App extends Component<{}, AppState> {
 
     this.state = {
       data: null
-    }
+    };
   }
 
   async componentDidMount() {
+    const url = `${EnumProxyAddress[process.env.NODE_ENV]}${
+      EnumApiRoutes.getPlateau
+    }`;
+    console.log(process.env.NODE_ENV);
     const result = await axios.get(EnumApiRoutes.getPlateau);
 
     this.setState({
-      data: result.data[0]
+      data: result.data.plateau.pop()
     });
   }
 
   postPlateau = async (data: IPlateauPayload) => {
-    const result = await axios.post(EnumApiRoutes.postPlateau, data)
+    const result = await axios.post(EnumApiRoutes.postPlateau, data);
 
     this.setState({
-      data: result.data[0]
+      data: result.data.data
     });
-  }
+  };
 
   render() {
-    const {data} = this.state;
+    const { data } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
           {data && data.name}
@@ -55,12 +60,15 @@ export default class App extends Component<{}, AppState> {
           >
             Learn React
           </a>
-        </header>
+        </header> */}
         <section>
-        <DetailsWrapper
-          submitData={this.postPlateau}
-          {...detailsWrapperText}
-        />
+          <DetailsWrapper
+            submitData={this.postPlateau}
+            {...detailsWrapperText}
+          />
+          {data && (
+            <Plateau width={data.size.width} height={data.size.height} />
+          )}
         </section>
       </div>
     );
