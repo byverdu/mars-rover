@@ -30,9 +30,43 @@ export default class App extends Component<{}, AppState> {
     console.log(process.env.NODE_ENV);
     const result = await axios.get(EnumApiRoutes.getPlateau);
 
+    console.log(result)
+
     this.setState({
       data: result.data.plateau.pop()
     });
+
+    let dataLenght = result.data[0].rovers[0].stepsToNextPosition.steps.length;
+    let counter = 0;
+    let interval;
+
+    setTimeout(() => {
+      interval = setInterval(() => {
+        if (counter === dataLenght) {
+          clearInterval(interval)
+          console.log('end')
+        }
+
+        console.log('running')
+
+        const steps = this.state.data.rovers[0].stepsToNextPosition.steps.slice(counter, 1)
+
+        this.setState({
+          data: {
+            ...this.state.data,
+            rovers: [{
+              ...this.state.data.rovers[0],
+              stepsToNextPosition: {
+                steps: this.state.data.rovers[0].stepsToNextPosition.steps.slice(1)
+              }
+            }
+            ]
+          }
+        })
+
+        counter += 1;
+      }, 1500)
+    }, 1000)
   }
 
   postPlateau = async (data: IPlateauPayload) => {
