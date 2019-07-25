@@ -1,6 +1,7 @@
-import React, { useState, memo } from 'react';
+import React from 'react';
 import './NextSteps.scss';
-import { EnumsSteps, EnumCardinalPoints } from '../../Models/enums';
+import { EnumsSteps } from '../../Models/enums';
+import { convertSourceInToCoords } from '../../config/utils';
 
 export interface NextStepsProps {
   setRoverNextSteps: (value: string) => void;
@@ -8,106 +9,78 @@ export interface NextStepsProps {
   outOfBoundaries: number;
 }
 
-const possibleDirections = {
-  N: {
-    L: EnumCardinalPoints.W,
-    R: EnumCardinalPoints.E
-  },
-  E: {
-    L: EnumCardinalPoints.N,
-    R: EnumCardinalPoints.S
-  },
-  S: {
-    L: EnumCardinalPoints.E,
-    R: EnumCardinalPoints.W
-  },
-  W: {
-    L: EnumCardinalPoints.S,
-    R: EnumCardinalPoints.N
-  }
-};
-
-function convertSourceInToCoords(position: string, step: string, outOfBoundaries: number) {
-  const currentPosition = position.split(' ');
-  const tempCoords = {
-    x: Number(currentPosition[0]),
-    y: Number(currentPosition[1]),
-    position: currentPosition[2]
-  };
-
-  switch (step) {
-    case 'L':
-      tempCoords.position = possibleDirections[tempCoords.position]['L'];
-      break;
-
-    case 'R':
-      tempCoords.position = possibleDirections[tempCoords.position]['R'];
-      break;
-
-    case 'M':
-      if (tempCoords.position === 'N') {
-        tempCoords.y = tempCoords.y + 1;
-      }
-      if (tempCoords.position === 'S') {
-        tempCoords.y = tempCoords.y - 1;
-      }
-      if (tempCoords.position === 'E') {
-        tempCoords.x = tempCoords.x + 1;
-      }
-      if (tempCoords.position === 'W') {
-        tempCoords.x = tempCoords.x - 1;
-      }
-      break;
-    default:
-      break;
-  }
-
-  if (
-    tempCoords.x === -1 ||
-    tempCoords.x === outOfBoundaries ||    
-    tempCoords.y === -1 ||
-    tempCoords.y === outOfBoundaries
-  ) {
-    return null;
-  }
-
-  return `${tempCoords.x} ${tempCoords.y} ${tempCoords.position}`;
+interface NextStepsState {
+  steps: string;
+  nextPosition: string;
 }
 
-const NextSteps: React.FC<NextStepsProps> = ({ setRoverNextSteps, initialPosition, outOfBoundaries }) => {
-  const [steps, setSteps] = useState('');
-  const [nextPosition, setNextPosition] = useState(initialPosition);
+export default class NextSteps extends React.PureComponent<
+  NextStepsProps,
+  NextStepsState
+> {
+  constructor(props) {
+    super(props);
 
-  console.log(initialPosition, 'NextSteps');
+    this.state = {
+      steps: '',
+      nextPosition: ''
+    };
+  }
 
-  return (
-    <div>
-      <h5>Set Rover Next Steps</h5>
-      {steps}
-      {[EnumsSteps.L, EnumsSteps.M, EnumsSteps.R].map((step) => {
-        return (
-          <button
-            data-step={step}
-            onClick={(e: React.MouseEvent) => {
-              const elementText = (e.target as HTMLButtonElement).textContent;
-              const newText = steps.concat(elementText);
-              const x = nextPosition.length !== 0 ? nextPosition : initialPosition;
-              const xoxo = convertSourceInToCoords(x, elementText, outOfBoundaries)
-              setNextPosition(xoxo);
-              const isMoveForwardOutOfBoundaries = convertSourceInToCoords(xoxo, 'M', outOfBoundaries);
+  componentWillReceiveProps(props: NextStepsProps, state) {
+    if (props.initialPosition === '') {
+      this.setState({
+        steps: ''
+      });
+    }
+  }
 
-              (document.querySelector('[data-step="M"]') as HTMLButtonElement).disabled = isMoveForwardOutOfBoundaries === null;
+  onClickHandler = (e) => {
+    const { initialPosition, setRoverNextSteps, outOfBoundaries } = this.props;
+    const { steps, nextPosition } = this.state;
 
-              setSteps(newText);
-              setRoverNextSteps(newText);
-            }}
-          >
-            {step}
-          </button>
-        );
-      })}
-    </div>
-  );
-};
+    const elementText = (e.target as HTMLButtonElement).textContent;
+    const newText = steps.concat(elementText);
+    const thisPosition =
+      nextPosition.length !== 0 ? nextPosition : initialPosition;
+    const nextCoords = convertSourceInToCoords(
+      thisPosition,
+      elementText,
+      outOfBoundaries
+    );
 
-export default memo(NextSteps);
+    const isMoveForwardOutOfBoundaries = convertSourceInToCoords(
+      nextCoords,
+      'M',
+      outOfBoundaries
+    );
+
+    (document.querySelector('[data-step="M"]') as HTMLButtonElement).disabled =
+      isMoveForwardOutOfBoundaries === null;
+
+    setRoverNextSteps(newText);
+
+    this.setState({
+      nextPosition: nextCoords,
+      steps: newText
+    });
+  };
+
+  render() {
+    const { steps } = this.state;
+
+    return (
+      <div>
+        <h5>Set Rover Next Steps</h5>
+        {steps}
+        {[EnumsSteps.L, EnumsSteps.M, EnumsSteps.R].map((step) => {
+          return (
+            <button key={step} data-step={step} onClick={this.onClickHandler}>
+              {step}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+}
