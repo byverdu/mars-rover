@@ -67,7 +67,11 @@ export default class App extends Component<{}, AppState> {
             {...detailsWrapperText}
           />
           {data && (
-            <Plateau width={data.size.width} height={data.size.height} />
+            <Plateau
+              width={data.size.width}
+              height={data.size.height}
+              rovers={data.rovers}
+            />
           )}
         </section>
       </div>

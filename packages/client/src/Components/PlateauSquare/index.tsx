@@ -8,11 +8,18 @@ export interface PlateauSquareProps {
   empty: boolean;
 }
 
-const PlateauSquare: React.FC<PlateauSquareProps> = ({axis, empty}) => (
+const PlateauSquare: React.FC<PlateauSquareProps> = ({
+  axis,
+  empty,
+  children
+}) => (
   <div
-    className={classnames('tile', {empty: empty, busy: !empty})}
+    className={classnames('tile', { empty: empty, busy: !empty })}
     data-axis={axis}
-  />
+  >
+    {axis}
+    {children}
+  </div>
 );
 
-export default PlateauSquare
+export default PlateauSquare;
