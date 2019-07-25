@@ -27,7 +27,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
       >
         <span
           className="item-coords"
-          key="0.45810798820643117"
+          key="0-7"
           onClick={[Function]}
         >
           0
@@ -36,7 +36,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9817995300988851"
+          key="1-7"
           onClick={[Function]}
         >
           1
@@ -45,7 +45,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.4909886058827777"
+          key="2-7"
           onClick={[Function]}
         >
           2
@@ -54,7 +54,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9781534071690328"
+          key="3-7"
           onClick={[Function]}
         >
           3
@@ -63,7 +63,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.11679150350611178"
+          key="4-7"
           onClick={[Function]}
         >
           4
@@ -72,7 +72,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.852791258553534"
+          key="5-7"
           onClick={[Function]}
         >
           5
@@ -81,7 +81,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.1418337111994432"
+          key="6-7"
           onClick={[Function]}
         >
           6
@@ -90,7 +90,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5598521761648336"
+          key="7-7"
           onClick={[Function]}
         >
           7
@@ -99,7 +99,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.11677213673316422"
+          key="0-6"
           onClick={[Function]}
         >
           0
@@ -108,7 +108,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.8709437187951041"
+          key="1-6"
           onClick={[Function]}
         >
           1
@@ -117,7 +117,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5444569535329131"
+          key="2-6"
           onClick={[Function]}
         >
           2
@@ -126,7 +126,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.8980627259391771"
+          key="3-6"
           onClick={[Function]}
         >
           3
@@ -135,7 +135,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9820020347693765"
+          key="4-6"
           onClick={[Function]}
         >
           4
@@ -144,7 +144,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.07598781579612623"
+          key="5-6"
           onClick={[Function]}
         >
           5
@@ -153,7 +153,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.18508839811910294"
+          key="6-6"
           onClick={[Function]}
         >
           6
@@ -162,7 +162,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.6876568258445179"
+          key="7-6"
           onClick={[Function]}
         >
           7
@@ -171,7 +171,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.8303671839126581"
+          key="0-5"
           onClick={[Function]}
         >
           0
@@ -180,7 +180,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5604754896836568"
+          key="1-5"
           onClick={[Function]}
         >
           1
@@ -189,7 +189,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9028865053844859"
+          key="2-5"
           onClick={[Function]}
         >
           2
@@ -198,7 +198,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.2644005898616779"
+          key="3-5"
           onClick={[Function]}
         >
           3
@@ -207,7 +207,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.18525167286630162"
+          key="4-5"
           onClick={[Function]}
         >
           4
@@ -216,7 +216,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.4346455934054694"
+          key="5-5"
           onClick={[Function]}
         >
           5
@@ -225,7 +225,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.08247733902934207"
+          key="6-5"
           onClick={[Function]}
         >
           6
@@ -234,7 +234,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.6851395492110175"
+          key="7-5"
           onClick={[Function]}
         >
           7
@@ -243,7 +243,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.7184805115004667"
+          key="0-4"
           onClick={[Function]}
         >
           0
@@ -252,7 +252,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.690690371062815"
+          key="1-4"
           onClick={[Function]}
         >
           1
@@ -261,7 +261,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.3342657207507391"
+          key="2-4"
           onClick={[Function]}
         >
           2
@@ -270,7 +270,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9748002694167361"
+          key="3-4"
           onClick={[Function]}
         >
           3
@@ -279,7 +279,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.7908671836509094"
+          key="4-4"
           onClick={[Function]}
         >
           4
@@ -288,7 +288,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5997791622193596"
+          key="5-4"
           onClick={[Function]}
         >
           5
@@ -297,7 +297,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.08044414366778851"
+          key="6-4"
           onClick={[Function]}
         >
           6
@@ -306,7 +306,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.3034927751069769"
+          key="7-4"
           onClick={[Function]}
         >
           7
@@ -315,7 +315,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5435762158999076"
+          key="0-3"
           onClick={[Function]}
         >
           0
@@ -324,7 +324,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.32890138951039605"
+          key="1-3"
           onClick={[Function]}
         >
           1
@@ -333,7 +333,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9072398383092446"
+          key="2-3"
           onClick={[Function]}
         >
           2
@@ -342,7 +342,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.10775763234330049"
+          key="3-3"
           onClick={[Function]}
         >
           3
@@ -351,7 +351,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.748786149543879"
+          key="4-3"
           onClick={[Function]}
         >
           4
@@ -360,7 +360,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.11673218483201464"
+          key="5-3"
           onClick={[Function]}
         >
           5
@@ -369,7 +369,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5706165858536516"
+          key="6-3"
           onClick={[Function]}
         >
           6
@@ -378,7 +378,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5128066624824834"
+          key="7-3"
           onClick={[Function]}
         >
           7
@@ -387,7 +387,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.4415792818906692"
+          key="0-2"
           onClick={[Function]}
         >
           0
@@ -396,7 +396,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.3058705166907434"
+          key="1-2"
           onClick={[Function]}
         >
           1
@@ -405,7 +405,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9232759533316985"
+          key="2-2"
           onClick={[Function]}
         >
           2
@@ -414,7 +414,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.1530502500913844"
+          key="3-2"
           onClick={[Function]}
         >
           3
@@ -423,7 +423,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.22720300906716395"
+          key="4-2"
           onClick={[Function]}
         >
           4
@@ -432,7 +432,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.6204804721704309"
+          key="5-2"
           onClick={[Function]}
         >
           5
@@ -441,7 +441,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.8333717941588303"
+          key="6-2"
           onClick={[Function]}
         >
           6
@@ -450,7 +450,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.9084728542558347"
+          key="7-2"
           onClick={[Function]}
         >
           7
@@ -459,7 +459,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.4293601933457183"
+          key="0-1"
           onClick={[Function]}
         >
           0
@@ -468,7 +468,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.2762147506728603"
+          key="1-1"
           onClick={[Function]}
         >
           1
@@ -477,7 +477,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.34913677048633507"
+          key="2-1"
           onClick={[Function]}
         >
           2
@@ -486,7 +486,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.05413472368906036"
+          key="3-1"
           onClick={[Function]}
         >
           3
@@ -495,7 +495,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.11704247762317155"
+          key="4-1"
           onClick={[Function]}
         >
           4
@@ -504,7 +504,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.06361758988466137"
+          key="5-1"
           onClick={[Function]}
         >
           5
@@ -513,7 +513,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.36176954667100425"
+          key="6-1"
           onClick={[Function]}
         >
           6
@@ -522,7 +522,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.035200803636984634"
+          key="7-1"
           onClick={[Function]}
         >
           7
@@ -531,7 +531,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.48608721129304033"
+          key="0-0"
           onClick={[Function]}
         >
           0
@@ -540,7 +540,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.712269874220073"
+          key="1-0"
           onClick={[Function]}
         >
           1
@@ -549,7 +549,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.3344008226106041"
+          key="2-0"
           onClick={[Function]}
         >
           2
@@ -558,7 +558,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.6197727962406288"
+          key="3-0"
           onClick={[Function]}
         >
           3
@@ -567,7 +567,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.950624371859424"
+          key="4-0"
           onClick={[Function]}
         >
           4
@@ -576,7 +576,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.2565674094385719"
+          key="5-0"
           onClick={[Function]}
         >
           5
@@ -585,7 +585,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.3367145614576035"
+          key="6-0"
           onClick={[Function]}
         >
           6
@@ -594,7 +594,7 @@ exports[`<Dropdown /> should create a snapshot 1`] = `
         </span>
         <span
           className="item-coords"
-          key="0.5060123102322502"
+          key="7-0"
           onClick={[Function]}
         >
           7

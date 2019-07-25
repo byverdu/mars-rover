@@ -27,13 +27,16 @@ function coordsBuilder(width, height, setRoverPosition) {
     for (let i = 0; i < width; i += 1) {
       wrapper.push(
         <span
+          key={`${i}-${height - newHeight}`}
           className="item-coords"
           onClick={(e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault();
             const alreadySelected = selectedElement('.coords .item-coords');
+
             if (alreadySelected) {
               alreadySelected.classList.remove('selected');
             }
+
             const element = e.target as HTMLElement;
             const siblingText = getTextSiblingSelected(
               '.item-cardinals.selected'
@@ -65,6 +68,7 @@ function cardinalPointsBuilder(setRoverPosition) {
     EnumCardinalPoints.W
   ].map((cardinal) => (
     <span
+      key={cardinal}
       className="item-cardinals"
       onClick={(e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
