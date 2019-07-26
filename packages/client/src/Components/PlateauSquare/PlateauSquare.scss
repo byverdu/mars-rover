@@ -1,5 +1,15 @@
 .tile {
   &.busy {
-    background: white;
+    opacity: 1;
+    background: #cd5c5c;
+  }
+
+  &.will-be-busy {
+    opacity: 0.1;
+
+    &.busy {
+      opacity: 1;
+      background: #cd5c5c;
+    }
   }
 }
