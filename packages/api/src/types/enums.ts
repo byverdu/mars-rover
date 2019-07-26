@@ -15,5 +15,6 @@ export enum EnumApiRoutes {
   getHealthCheck = '/health-check',
   getPlateau = '/api/plateau',
   getRoot = '/',
-  postPlateau = '/api/plateau/launch-rovers'
+  postPlateau = '/api/plateau/launch-rovers',
+  deleteAllPlateau = '/api/plateau/delete-all'
 }

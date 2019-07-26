@@ -1,5 +1,10 @@
 import { EnumCardinalPoints, EnumRoverStatus } from '../src/Models/enums';
-import { IPlateauPayload, IPlateau, IRover, IRoverPositionPayload } from '../src/Models/Interfaces';
+import {
+  IPlateauPayload,
+  IPlateau,
+  IRover,
+  IRoverPositionPayload
+} from '../src/Models/Interfaces';
 import { v4 } from 'uuid';
 import apiUtils from '../../api/src/utils';
 
@@ -13,16 +18,21 @@ interface Utils {
 }
 
 const readFileAsync = promisify(fs.readFile);
-const getPathToJsonMock = fileName => {
+const getPathToJsonMock = (fileName) => {
   const mocksPath = 'e2e/fixtures';
-  const jsonPath = path.join(__dirname, '../', `${mocksPath}`, `${fileName}.json`);
+  const jsonPath = path.join(
+    __dirname,
+    '../',
+    `${mocksPath}`,
+    `${fileName}.json`
+  );
 
   return jsonPath;
 };
 
 export const utils: Utils = {
-  postPlateau: (data: IPlateau[], {plateauSize, rovers}: IPlateauPayload) => {
-      console.log(plateauSize, 'inside utils file')
+  postPlateau: (data: IPlateau[], { plateauSize, rovers }: IPlateauPayload) => {
+    console.log(plateauSize, 'inside utils file');
     const tempPlateau = plateauSize.split('x');
     const uuidPlateau = v4();
     const tempRovers: IRover[] = rovers.map((item: IRoverPositionPayload) => {
@@ -69,9 +79,7 @@ export const utils: Utils = {
       rovers: tempRovers
     };
 
-    data = [newPlateau]
-
-    return data;
+    return newPlateau;
   },
   getContentForRoutes: () => {
     let count = 0;
@@ -82,11 +90,13 @@ export const utils: Utils = {
     const routes = Object.keys(mapRoutesToJson);
 
     return new Promise((resolve, reject) => {
-      routes.forEach(async route => {
+      routes.forEach(async (route) => {
         const fileName = mapRoutesToJson[route];
 
         try {
-          const fileContent = await readFileAsync(getPathToJsonMock(fileName), { encoding: 'utf8' });
+          const fileContent = await readFileAsync(getPathToJsonMock(fileName), {
+            encoding: 'utf8'
+          });
           paths[route] = JSON.parse(fileContent);
           count += 1;
           if (count === routes.length) {
