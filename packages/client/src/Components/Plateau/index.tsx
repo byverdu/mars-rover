@@ -10,9 +10,9 @@ function roverAxisFormatter(position: string) {
   return `x${coords[0]}:y${coords[1]}`.trim();
 }
 
-function gridBuilder(width: number, height: number, rovers: IRover[]) {
+function gridBuilder(width: number, height: number, rover: IRover) {
   const wrapper = [];
-  const rover: IRover = rovers[0];
+  // const rover: IRover = rovers[0];
   const { rawFormat, position } = rover.lastKnownPosition;
   const nextStepsFormatted = rover.stepsToNextPosition.steps.map((step) =>
     roverAxisFormatter(step)
@@ -59,12 +59,12 @@ function gridBuilder(width: number, height: number, rovers: IRover[]) {
 export interface PlateauProps {
   width: number;
   height: number;
-  rovers: IRover[];
+  rover: IRover;
 }
 
-const Plateau: React.FC<PlateauProps> = ({ width, height, rovers }) => (
+const Plateau: React.FC<PlateauProps> = ({ width, height, rover }) => (
   <section className="plateau" style={{ width: `${width * 100}px` }}>
-    {gridBuilder(width, height, rovers)}
+    {gridBuilder(width, height, rover)}
   </section>
 );
 
