@@ -14,19 +14,25 @@ function gridBuilder(width: number, height: number, rovers: IRover[]) {
   const wrapper = [];
   const rover: IRover = rovers[0];
   const { rawFormat, position } = rover.lastKnownPosition;
-  const nextStepsFormatted = rover.stepsToNextPosition.steps
-    .map(step => roverAxisFormatter(step));
+  const nextStepsFormatted = rover.stepsToNextPosition.steps.map((step) =>
+    roverAxisFormatter(step)
+  );
 
   function rowBuilder(newHeight) {
     for (let i = 0; i < width; i += 1) {
       const axis = `x${i}:y${height - newHeight}`;
       const roverAxisPos = roverAxisFormatter(rawFormat);
-      console.log(nextStepsFormatted, roverAxisPos)
+      // console.log(nextStepsFormatted, roverAxisPos)
       const isBusy = axis !== roverAxisPos;
       const willBeBusy = nextStepsFormatted.indexOf(axis) !== -1;
 
       wrapper.push(
-        <PlateauSquare key={axis} axis={axis} empty={isBusy}>
+        <PlateauSquare
+          willBeBusy={willBeBusy}
+          key={axis}
+          axis={axis}
+          empty={isBusy}
+        >
           {!isBusy && (
             <Rover
               axis={roverAxisPos}
@@ -45,7 +51,7 @@ function gridBuilder(width: number, height: number, rovers: IRover[]) {
     counter += 1;
   }
 
-  console.log(wrapper, 'Plateau.scss');
+  // console.log(wrapper, 'Plateau.scss');
 
   return wrapper;
 }

@@ -6,7 +6,7 @@ import { EnumApiRoutes, EnumProxyAddress } from './Models/enums';
 import DetailsWrapper from './Components/DetailsWrapper';
 import Plateau from './Components/Plateau';
 import { detailsWrapperText } from './config';
-import { IPlateauPayload } from './Models/Interfaces';
+import { IPlateauPayload, IRover } from './Models/Interfaces';
 
 // https://codepen.io/giana/pen/OrpdLK
 
@@ -30,43 +30,61 @@ export default class App extends Component<{}, AppState> {
     console.log(process.env.NODE_ENV);
     const result = await axios.get(EnumApiRoutes.getPlateau);
 
-    console.log(result)
+    // console.log(result)
 
-    this.setState({
-      data: result.data.plateau.pop()
-    });
-
-    let dataLenght = result.data[0].rovers[0].stepsToNextPosition.steps.length;
-    let counter = 0;
-    let interval;
-
-    setTimeout(() => {
-      interval = setInterval(() => {
-        if (counter === dataLenght) {
-          clearInterval(interval)
-          console.log('end')
-        }
-
-        console.log('running')
-
-        const steps = this.state.data.rovers[0].stepsToNextPosition.steps.slice(counter, 1)
-
-        this.setState({
-          data: {
-            ...this.state.data,
-            rovers: [{
-              ...this.state.data.rovers[0],
-              stepsToNextPosition: {
-                steps: this.state.data.rovers[0].stepsToNextPosition.steps.slice(1)
+    this.setState(
+      {
+        data: result.data.plateau.pop()
+      },
+      () => {
+        const repeat = this.state.data.rovers.map(
+          (item: IRover) => item.stepsToNextPosition.steps
+        );
+        console.log(repeat);
+        /*
+      let roversCount = this.state.data.rovers.length;
+      let index = 0;
+        
+        let dataLenght = this.state.data.rovers[index].stepsToNextPosition.steps.length;
+        let counter = 0;
+  
+        let interval;
+  
+        setTimeout(() => {
+          interval = setInterval(() => {
+            if (counter === dataLenght) {
+              clearInterval(interval)
+              if (index <= roversCount) {
+                index += 1;
               }
+              console.log('end')
             }
-            ]
-          }
-        })
+  
+            console.log('running', index)
+  
+            const steps = this.state.data.rovers[index].stepsToNextPosition.steps.slice(1)
+  
+            this.setState({
+              data: {
+                ...this.state.data,
+                rovers: [
+                  ...this.state.data.rovers,{
+                  ...this.state.data.rovers[index],
+                  stepsToNextPosition: {
+                    steps
+                  }
+                }
+                ]
+              }
+            })
+  
+            counter += 1;
+          }, 1500)
+        }, 1000)
 
-        counter += 1;
-      }, 1500)
-    }, 1000)
+        */
+      }
+    );
   }
 
   postPlateau = async (data: IPlateauPayload) => {

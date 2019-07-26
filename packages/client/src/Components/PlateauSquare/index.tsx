@@ -6,6 +6,7 @@ const classnames = require('classnames');
 export interface PlateauSquareProps {
   axis: string;
   empty: boolean;
+  willBeBusy: boolean;
 }
 
 const PlateauSquare: React.FC<PlateauSquareProps> = ({
