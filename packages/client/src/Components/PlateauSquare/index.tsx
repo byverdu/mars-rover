@@ -6,13 +6,24 @@ const classnames = require('classnames');
 export interface PlateauSquareProps {
   axis: string;
   empty: boolean;
+  willBeBusy: boolean;
 }
 
-const PlateauSquare: React.FC<PlateauSquareProps> = ({axis, empty}) => (
+const PlateauSquare: React.FC<PlateauSquareProps> = ({
+  axis,
+  empty,
+  willBeBusy,
+  children
+}) => (
   <div
-    className={classnames('tile', {empty: empty, busy: !empty})}
+    className={classnames('tile', {
+      'will-be-busy': willBeBusy,
+      busy: !empty
+    })}
     data-axis={axis}
-  />
+  >
+    {children}
+  </div>
 );
 
-export default PlateauSquare
+export default PlateauSquare;

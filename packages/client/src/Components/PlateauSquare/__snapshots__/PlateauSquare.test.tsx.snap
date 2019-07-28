@@ -4,9 +4,10 @@ exports[`<PlateauSquare /> should create a snapshot 1`] = `
 <PlateauSquare
   axis="x0:y0"
   empty={true}
+  willBeBusy={true}
 >
   <div
-    className="tile empty"
+    className="tile will-be-busy"
     data-axis="x0:y0"
   />
 </PlateauSquare>

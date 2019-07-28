@@ -3,18 +3,56 @@
 exports[`<Plateau /> should create a snapshot 1`] = `
 <Plateau
   height={5}
+  rovers={
+    Array [
+      Object {
+        "lastKnownPosition": Object {
+          "axis": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "position": "N",
+          "rawFormat": "0 0 N",
+        },
+        "newPosition": Object {
+          "axis": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "position": "E",
+          "rawFormat": "0 1 E",
+        },
+        "status": "sleep",
+        "stepsToNextPosition": Object {
+          "source": "ML",
+          "steps": Array [
+            "0 1 N",
+            "0 1 E",
+          ],
+        },
+        "uuid": "abc",
+        "uuidPlateau": "124",
+      },
+    ]
+  }
   width={5}
 >
   <section
     className="plateau"
+    style={
+      Object {
+        "width": "500px",
+      }
+    }
   >
     <PlateauSquare
       axis="x0:y4"
       empty={true}
       key="x0:y4"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x0:y4"
       />
     </PlateauSquare>
@@ -22,9 +60,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x1:y4"
       empty={true}
       key="x1:y4"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x1:y4"
       />
     </PlateauSquare>
@@ -32,9 +71,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x2:y4"
       empty={true}
       key="x2:y4"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x2:y4"
       />
     </PlateauSquare>
@@ -42,9 +82,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x3:y4"
       empty={true}
       key="x3:y4"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x3:y4"
       />
     </PlateauSquare>
@@ -52,9 +93,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x4:y4"
       empty={true}
       key="x4:y4"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x4:y4"
       />
     </PlateauSquare>
@@ -62,9 +104,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x0:y3"
       empty={true}
       key="x0:y3"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x0:y3"
       />
     </PlateauSquare>
@@ -72,9 +115,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x1:y3"
       empty={true}
       key="x1:y3"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x1:y3"
       />
     </PlateauSquare>
@@ -82,9 +126,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x2:y3"
       empty={true}
       key="x2:y3"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x2:y3"
       />
     </PlateauSquare>
@@ -92,9 +137,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x3:y3"
       empty={true}
       key="x3:y3"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x3:y3"
       />
     </PlateauSquare>
@@ -102,9 +148,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x4:y3"
       empty={true}
       key="x4:y3"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x4:y3"
       />
     </PlateauSquare>
@@ -112,9 +159,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x0:y2"
       empty={true}
       key="x0:y2"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x0:y2"
       />
     </PlateauSquare>
@@ -122,9 +170,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x1:y2"
       empty={true}
       key="x1:y2"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x1:y2"
       />
     </PlateauSquare>
@@ -132,9 +181,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x2:y2"
       empty={true}
       key="x2:y2"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x2:y2"
       />
     </PlateauSquare>
@@ -142,9 +192,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x3:y2"
       empty={true}
       key="x3:y2"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x3:y2"
       />
     </PlateauSquare>
@@ -152,9 +203,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x4:y2"
       empty={true}
       key="x4:y2"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x4:y2"
       />
     </PlateauSquare>
@@ -162,9 +214,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x0:y1"
       empty={true}
       key="x0:y1"
+      willBeBusy={true}
     >
       <div
-        className="tile empty"
+        className="tile will-be-busy"
         data-axis="x0:y1"
       />
     </PlateauSquare>
@@ -172,9 +225,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x1:y1"
       empty={true}
       key="x1:y1"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x1:y1"
       />
     </PlateauSquare>
@@ -182,9 +236,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x2:y1"
       empty={true}
       key="x2:y1"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x2:y1"
       />
     </PlateauSquare>
@@ -192,9 +247,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x3:y1"
       empty={true}
       key="x3:y1"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x3:y1"
       />
     </PlateauSquare>
@@ -202,29 +258,50 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x4:y1"
       empty={true}
       key="x4:y1"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x4:y1"
       />
     </PlateauSquare>
     <PlateauSquare
       axis="x0:y0"
-      empty={true}
+      empty={false}
       key="x0:y0"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile busy"
         data-axis="x0:y0"
-      />
+      >
+        <Rover
+          axis="x0:y0"
+          direction="N"
+          status="sleep"
+        >
+          <div
+            className="rover sleep rotate-0"
+            data-axis="x0:y0"
+            data-direction="N"
+          >
+            <img
+              alt="mars rover"
+              className="rover-image"
+              src="https://cdn-jr.brainpop.com/image_library/240000/240204_256x256.png"
+            />
+          </div>
+        </Rover>
+      </div>
     </PlateauSquare>
     <PlateauSquare
       axis="x1:y0"
       empty={true}
       key="x1:y0"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x1:y0"
       />
     </PlateauSquare>
@@ -232,9 +309,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x2:y0"
       empty={true}
       key="x2:y0"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x2:y0"
       />
     </PlateauSquare>
@@ -242,9 +320,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x3:y0"
       empty={true}
       key="x3:y0"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x3:y0"
       />
     </PlateauSquare>
@@ -252,9 +331,10 @@ exports[`<Plateau /> should create a snapshot 1`] = `
       axis="x4:y0"
       empty={true}
       key="x4:y0"
+      willBeBusy={false}
     >
       <div
-        className="tile empty"
+        className="tile"
         data-axis="x4:y0"
       />
     </PlateauSquare>

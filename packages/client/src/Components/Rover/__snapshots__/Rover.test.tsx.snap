@@ -7,9 +7,15 @@ exports[`<Rover /> should create a snapshot 1`] = `
   status="sleep"
 >
   <div
-    className="rover sleep"
+    className="rover sleep rotate-0"
     data-axis="x0:y0"
     data-direction="N"
-  />
+  >
+    <img
+      alt="mars rover"
+      className="rover-image"
+      src="https://cdn-jr.brainpop.com/image_library/240000/240204_256x256.png"
+    />
+  </div>
 </Rover>
 `;

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Plateau from '../models/Plateau';
-import { MongoError } from 'mongodb';
+import { MongoError, DeleteWriteOpResultObject } from 'mongodb';
 import { IPlateau, IRover } from '../types/Interfaces';
 import { v4 } from 'uuid';
 import Rover from '../models/Rover';
@@ -20,15 +20,27 @@ export function getRoot(req: Request, res: Response) {
 }
 
 export function getPlateau(req: Request, res: Response) {
-  Plateau.find({}, (error: MongoError, docs: IPlateau[]) => {
-    if (error) {
-      throw error.message;
-    }
-    res.status(200);
-    res.json({
-      plateau: docs
+  Plateau.find()
+    .sort({ _id: -1 })
+    .exec((error: MongoError, docs: IPlateau[]) => {
+      if (error) {
+        throw error.message;
+      }
+      res.status(200);
+      res.json(docs[0]);
     });
-  });
+}
+
+export function deleteAllPlateau(req: Request, res: Response) {
+  Plateau.deleteMany({}).exec(
+    (error: MongoError, docs: DeleteWriteOpResultObject) => {
+      if (error) {
+        throw error.message;
+      }
+      res.status(200);
+      res.json(`Deleted ${docs.deletedCount} documents`);
+    }
+  );
 }
 
 export function postPlateau(req: Request, res: Response) {
@@ -85,8 +97,6 @@ export function postPlateau(req: Request, res: Response) {
     await plateau.save();
 
     res.status(200);
-    res.json({
-      data: docs
-    });
+    res.json(docs);
   });
 }

@@ -52,6 +52,8 @@ function convertSourceInToCoords(position: string, source: string) {
           tempCoords.x = tempCoords.x - 1;
         }
         break;
+      default:
+        break;
     }
 
     return `${tempCoords.x} ${tempCoords.y} ${tempCoords.position}`;

@@ -1,93 +1,74 @@
-import React, { useEffect, useState } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import React, { Component } from 'react';
+import './App.scss';
 import axios from 'axios';
 import { EnumApiRoutes } from './Models/enums';
+import DetailsWrapper from './Components/DetailsWrapper';
+import Plateau from './Components/Plateau';
+import { detailsWrapperText } from './config';
+import { IPlateauPayload, IRover } from './Models/Interfaces';
 
-// https://codepen.io/giana/pen/OrpdLK
-
-interface DetailsInputProps {
-  title: string
+interface AppState {
+  data: any;
+  rovers: IRover[];
 }
 
-const DetailsInput: React.FC<DetailsInputProps> = ({ title, children }) => {
-  return (
-    <details>
-      <summary>{title}</summary>
-      {children}
-    </details>
-  )
-};
+export default class App extends Component<{}, AppState> {
+  constructor(props) {
+    super(props);
 
-const DetailsInputPlateau: React.FC = () => (
-  <DetailsInput title="Set Plateau Size">
-    <section className="plateau-data">
-      <input type="number" name="width" placeholder="Set Width" />
-      <input type="number" name="height" placeholder="Set Height" />
-    </section>
-  </DetailsInput>
-);
+    this.state = {
+      data: null,
+      rovers: null
+    };
+  }
 
-const DetailsInputRover: React.FC = () => (
-  <DetailsInput title="Set Rover Data">
-    <section className="rover-data">
-      <input type="text" name="position" placeholder="Set Rover Coords" />
-      <input type="text" name="steps" placeholder="Set Rover Steps" />
-    </section>
-  </DetailsInput>
-);
+  async componentDidMount() {
+    const result = await axios.get(EnumApiRoutes.getPlateau);
 
-const App: React.FC = () => {
-  useEffect(() => {
-    axios.get('/api/plateau/')
-      .then(resp => console.log(resp.data, 'oi'))
-  })
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <DetailsInputPlateau />
-        <DetailsInputRover />
-        <button onClick={(e) => {
-          e.preventDefault();
+    if (Object.keys(result.data).length > 0) {
+      this.setState(
+        {
+          data: result.data,
+          rovers: result.data.rovers
+        },
+        () => this.forceUpdate()
+      );
+    }
+  }
 
-          const plateauSize = Array.from(document.querySelectorAll('.plateau-data input'));
+  postPlateau = async (payload: IPlateauPayload) => {
+    const { data } = await axios.post(EnumApiRoutes.postPlateau, payload);
 
-          const width = (plateauSize.find(input => (input as HTMLInputElement).name === 'width') as HTMLInputElement).value;
+    this.setState({
+      data,
+      rovers: data.rovers
+    });
+  };
 
-          const height = (plateauSize.find(input => (input as HTMLInputElement).name === 'height') as HTMLInputElement).value;
+  render() {
+    const { data, rovers } = this.state;
 
-          const tempRovers = Array.from(document.querySelectorAll('.rover-data input'));
-
-          const position = (tempRovers.find(input => (input as HTMLInputElement).name === 'position') as HTMLInputElement).value;
-
-          const steps = (tempRovers.find(input => (input as HTMLInputElement).name === 'steps') as HTMLInputElement).value;
-
-          console.log(position, steps, height, width);
-
-          axios.post(EnumApiRoutes.postPlateau, {
-            plateauSize: `${width}x${height}`,
-            rovers: [
-              { position, steps }
-            ]
-          });
-        }}>Set Data</button>
-      </header>
-      <section>
-      </section>
-    </div>
-  );
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>Mars Rover Expedition</h1>
+        </header>
+        <section>
+          <section>
+            <DetailsWrapper
+              submitData={this.postPlateau}
+              {...detailsWrapperText}
+            />
+          </section>
+          {data && (
+            <Plateau
+              width={data.size.width}
+              height={data.size.height}
+              rovers={rovers}
+            />
+          )}
+        </section>
+      </div>
+    );
+  }
 }
-
-export default App;

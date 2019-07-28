@@ -1,0 +1,24 @@
+.next-steps {
+  .key-button {
+    background-image: url(http://pngimages.net/sites/default/files/keyboard-key-png-image-20213.png);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 0;
+    outline: none;
+    font-size: 25px;
+    transform: scale(1);
+    transition: transform 1s;
+    cursor: pointer;
+    padding-bottom: 12px;
+
+    &:active {
+      transform: scale(0.8);
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NextSteps /> should create a snapshot 1`] = `
+<NextSteps
+  initialPosition="0 0 N"
+  outOfBoundaries={1}
+  setRoverNextSteps={[Function]}
+>
+  <div
+    className="next-steps"
+  >
+    <h5
+      className="next-steps-title"
+    >
+      Set Rover Next Steps
+    </h5>
+    <div
+      className="next-steps-resume"
+    />
+    <div
+      className="next-steps-actions"
+    >
+      <button
+        className="key-button"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&larr;",
+          }
+        }
+        data-step="L"
+        key="L"
+        onClick={[Function]}
+      />
+      <button
+        className="key-button"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&uarr;",
+          }
+        }
+        data-step="M"
+        key="M"
+        onClick={[Function]}
+      />
+      <button
+        className="key-button"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&rarr;",
+          }
+        }
+        data-step="R"
+        key="R"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+</NextSteps>
+`;

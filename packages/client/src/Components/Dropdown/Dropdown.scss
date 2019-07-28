@@ -1,0 +1,79 @@
+$purple: #5b13ec;
+$white: #ffffff;
+
+.wrapper {
+  height: 60px;
+  border: 1px solid grey;
+  position: relative;
+
+  &:before {
+    content: '\2026';
+    position: absolute;
+    transform: rotate(90deg);
+    left: 20px;
+    font-size: 40px;
+    top: 5px;
+  }
+
+  h5 {
+    margin: 0;
+    padding: 23px 0 20px;
+  }
+
+  .items {
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid grey;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    top: 1px;
+    width: 96%;
+    margin: 0 auto;
+    z-index: 2;
+
+    &.hide {
+      display: none;
+    }
+
+    &.show {
+      display: flex;
+    }
+
+    .coords {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $white;
+      color: $purple;
+      z-index: 1;
+    }
+
+    .item-coords {
+      width: 100px;
+      box-shadow: 1px -1px, -1px 1px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cardinals {
+      display: flex;
+      flex-direction: column;
+      background-color: $white;
+      color: $purple;
+      margin-left: 10px;
+    }
+
+    .item-cardinals {
+      box-shadow: 1px -1px, -1px 1px;
+      padding: 10px;
+    }
+
+    .selected {
+      background-color: $purple;
+      color: $white;
+    }
+  }
+}
