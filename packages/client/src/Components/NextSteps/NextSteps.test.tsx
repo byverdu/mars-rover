@@ -6,7 +6,8 @@ import toJson from 'enzyme-to-json';
 const props: NextStepsProps = {
   setRoverNextSteps: () => {},
   initialPosition: '0 0 N',
-  outOfBoundaries: 1
+  yAxisOutOfBoundaries: 9,
+  xAxisOutOfBoundaries: 10
 };
 
 describe('<NextSteps />', () => {
