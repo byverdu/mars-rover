@@ -17,7 +17,7 @@ const PlateauSquare: React.FC<PlateauSquareProps> = ({
 }) => (
   <div
     className={classnames('tile', {
-      ['will-be-busy']: willBeBusy,
+      'will-be-busy': willBeBusy,
       busy: !empty
     })}
     data-axis={axis}

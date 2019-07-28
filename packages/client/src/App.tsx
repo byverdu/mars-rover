@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import axios from 'axios';
-import {
-  EnumApiRoutes,
-  EnumProxyAddress,
-  EnumCardinalPoints
-} from './Models/enums';
+import { EnumApiRoutes } from './Models/enums';
 import DetailsWrapper from './Components/DetailsWrapper';
 import Plateau from './Components/Plateau';
 import { detailsWrapperText } from './config';
