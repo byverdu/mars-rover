@@ -8,6 +8,7 @@ $white: #ffffff;
   display: flex;
   flex-wrap: wrap;
   color: $white;
+  border: 1px solid;
 
   .tile {
     width: 100px;

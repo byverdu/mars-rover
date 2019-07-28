@@ -28,3 +28,10 @@ export enum EnumProxyAddress {
   development = 'http://localhost:9000',
   production = 'http://mars-rover_api:9000'
 }
+
+export enum EnumRotation {
+  N = 'rotate-0',
+  E = 'rotate-90',
+  S = 'rotate-180',
+  W = 'rotate-270'
+}

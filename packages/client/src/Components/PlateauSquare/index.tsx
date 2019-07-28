@@ -12,10 +12,14 @@ export interface PlateauSquareProps {
 const PlateauSquare: React.FC<PlateauSquareProps> = ({
   axis,
   empty,
+  willBeBusy,
   children
 }) => (
   <div
-    className={classnames('tile', { empty: empty, busy: !empty })}
+    className={classnames('tile', {
+      ['will-be-busy']: willBeBusy,
+      busy: !empty
+    })}
     data-axis={axis}
   >
     {axis}

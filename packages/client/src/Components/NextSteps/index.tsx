@@ -56,7 +56,7 @@ export default class NextSteps extends React.PureComponent<
     const { initialPosition, setRoverNextSteps, outOfBoundaries } = this.props;
     const { steps, nextPosition } = this.state;
 
-    const elementText = (e.target as HTMLButtonElement).textContent;
+    const elementText = (e.target as HTMLButtonElement).dataset.step;
     const newText = steps.concat(elementText);
     const thisPosition =
       nextPosition.length !== 0 ? nextPosition : initialPosition;
@@ -79,20 +79,38 @@ export default class NextSteps extends React.PureComponent<
     );
   };
 
+  convertDirectionToTextContent(direction) {
+    const entities = {
+      L: '&larr;',
+      M: '&uarr;',
+      R: '&rarr;'
+    };
+
+    return { __html: entities[direction] };
+  }
+
   render() {
     const { steps } = this.state;
 
     return (
-      <div>
-        <h5>Set Rover Next Steps</h5>
-        {steps}
-        {[EnumsSteps.L, EnumsSteps.M, EnumsSteps.R].map((step) => {
-          return (
-            <button key={step} data-step={step} onClick={this.onClickHandler}>
-              {step}
-            </button>
-          );
-        })}
+      <div className="next-steps">
+        <h5 className="next-steps-title">Set Rover Next Steps</h5>
+        <div className="next-steps-resume">{steps}</div>
+        <div className="next-steps-actions">
+          {[EnumsSteps.L, EnumsSteps.M, EnumsSteps.R].map((step) => {
+            return (
+              <button
+                data-step={step}
+                className="key-button"
+                key={step}
+                onClick={this.onClickHandler}
+                dangerouslySetInnerHTML={this.convertDirectionToTextContent(
+                  step
+                )}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
