@@ -52,7 +52,7 @@ function coordsBuilder(width, height, setRoverPosition) {
     }
   }
   let counter = 1;
-  while (counter <= width) {
+  while (counter <= height) {
     spanBuilder(counter);
     counter += 1;
   }
