@@ -50,11 +50,16 @@ export default class App extends Component<{}, AppState> {
 
     return (
       <div className="App">
+        <header className="App-header">
+          <h1>Mars Rover Expedition</h1>
+        </header>
         <section>
-          <DetailsWrapper
-            submitData={this.postPlateau}
-            {...detailsWrapperText}
-          />
+          <section>
+            <DetailsWrapper
+              submitData={this.postPlateau}
+              {...detailsWrapperText}
+            />
+          </section>
           {data && (
             <Plateau
               width={data.size.width}

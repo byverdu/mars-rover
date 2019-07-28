@@ -53,6 +53,7 @@ export default class NextSteps extends React.PureComponent<
   }
 
   onClickHandler = (e) => {
+    e.preventDefault();
     const { initialPosition, setRoverNextSteps, outOfBoundaries } = this.props;
     const { steps, nextPosition } = this.state;
 

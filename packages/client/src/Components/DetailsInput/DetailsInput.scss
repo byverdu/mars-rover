@@ -21,7 +21,7 @@ $contentsClass: 'summary + *';
   Remove the height prop for a simple toggle on/off (after all that work I did for you?)
 */
 //Simplified: :not(.panel-active) .details-wrapper {}
-#{$accordionClass} :not(#{$panelClass}) #{$contentsClass} {  
+#{$accordionClass} :not(#{$panelClass}) #{$contentsClass} {
   height: 0;
   opacity: 0;
   transform: scale(0.9);
@@ -30,12 +30,20 @@ $contentsClass: 'summary + *';
 
 // Let's get rid of the default arrows so we can style our own, as we must find whatever little joy we can in this garbage web
 #{$accordionClass} {
-  summary { list-style: none; } // Spec
-  summary::-webkit-details-marker { display: none; } // Chrome
-  summary::before { display: none; } // Polyfill
-    
+  summary {
+    list-style: none;
+  } // Spec
+  summary::-webkit-details-marker {
+    display: none;
+  } // Chrome
+  summary::before {
+    display: none;
+  } // Polyfill
+
   // Should we do this? No idea
-  summary { cursor: pointer; }
+  summary {
+    cursor: pointer;
+  }
 }
 
 /*
@@ -59,34 +67,22 @@ $border: hsl($hue, 20, 85);
 
 ::selection {
   $rot: 140;
-  
+
   background: hsl($hue + $rot, 95, 70);
   color: adjust-hue($text, $rot);
-}
-
-html {
-  background: $background;
-  color: $text;
-}
-
-body {
-  font: 1em/1.4 'Quicksand', sans-serif;
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 5vw;
 }
 
 h1 {
   font-size: 2em;
   margin-bottom: 1em;
   text-align: center;
-  
+
   + p {
     margin-left: auto;
     margin-right: auto;
     max-width: 50ch;
   }
-  
+
   ~ p {
     font-size: 1.2em;
     text-align: center;
@@ -96,13 +92,15 @@ h1 {
 p {
   margin-top: 0;
   margin-bottom: 1em;
-  
-  &:last-child { margin-bottom: 0; }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 code {
   $rot: 90;
-  
+
   background: hsla($hue + $rot, 70, 70, 0.1);
   color: hsl($hue + $rot - 5, 75, 65);
 }
@@ -113,7 +111,7 @@ a {
   font-weight: 700;
   text-decoration: none;
   transition: 0.2s;
-  
+
   &:hover,
   &:focus {
     box-shadow: inset 0 -1.2em $link;
@@ -127,12 +125,12 @@ abbr {
   font-size: 1.2em;
 }
 
-[type=checkbox] {
+[type='checkbox'] {
   opacity: 0;
   position: absolute;
   width: 0;
   height: 0;
-  
+
   + label {
     background: lighten($primary, 45);
     border-left: 4px solid $primary;
@@ -143,7 +141,7 @@ abbr {
     text-align: left;
     transition: 0.1s;
     padding: 0.75em 1em;
-    
+
     &::before {
       border: 2px solid;
       border-radius: 2px;
@@ -157,11 +155,11 @@ abbr {
       vertical-align: baseline;
     }
   }
-  
+
   &:focus + label {
-    outline: 2px solid $primary;    
+    outline: 2px solid $primary;
   }
-  
+
   &:checked + label::before {
     background: currentColor;
     box-shadow: inset 0 0 0 2px #fff;
@@ -169,23 +167,22 @@ abbr {
 }
 
 .container {
-  box-shadow: 0.2em 1em 2em -1em $border;
   margin: 2.4em 0;
 }
 
 //==== Accordion element styling
 details {
   $b: 6px;
-  
+
   background: #fff;
   border: 1px solid $border;
   border-bottom: 0;
   list-style: none;
-  
+
   &:first-child {
     border-radius: $b $b 0 0;
   }
-  
+
   &:last-child {
     border-bottom: 1px solid $border;
     border-radius: 0 0 $b $b;
@@ -194,16 +191,18 @@ details {
 
 summary {
   $arrow-size: 0.5em;
-  
+  text-align: left;
+  font-size: 1.2em;
+  color: black;
   display: block;
   transition: 0.2s;
   font-weight: 700;
   padding: 1em;
-    
+
   &:focus {
     outline: 2px solid $primary;
   }
-  
+
   #{$accordionClass} &::after {
     border-right: 2px solid;
     border-bottom: 2px solid;
@@ -215,12 +214,12 @@ summary {
     transform: rotate(45deg);
     transition: inherit;
   }
-  
+
   [open] & {
     background: $primary;
     color: $background;
-    
-    &::after { 
+
+    &::after {
       margin-top: $arrow-size;
       transform: rotate(225deg);
     }

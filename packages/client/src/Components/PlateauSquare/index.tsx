@@ -22,7 +22,6 @@ const PlateauSquare: React.FC<PlateauSquareProps> = ({
     })}
     data-axis={axis}
   >
-    {axis}
     {children}
   </div>
 );

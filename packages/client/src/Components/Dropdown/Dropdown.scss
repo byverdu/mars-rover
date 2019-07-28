@@ -2,12 +2,36 @@ $purple: #5b13ec;
 $white: #ffffff;
 
 .wrapper {
-  height: 50px;
+  height: 60px;
+  border: 1px solid grey;
+  position: relative;
+
+  &:before {
+    content: '\2026';
+    position: absolute;
+    transform: rotate(90deg);
+    left: 20px;
+    font-size: 40px;
+    top: 5px;
+  }
+
+  h5 {
+    margin: 0;
+    padding: 23px 0 20px;
+  }
 
   .items {
     justify-content: center;
     position: relative;
     align-items: center;
+    padding: 20px;
+    border: 1px solid grey;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    top: 1px;
+    width: 96%;
+    margin: 0 auto;
+    z-index: 2;
 
     &.hide {
       display: none;
@@ -22,6 +46,7 @@ $white: #ffffff;
       flex-wrap: wrap;
       background-color: $white;
       color: $purple;
+      z-index: 1;
     }
 
     .item-coords {

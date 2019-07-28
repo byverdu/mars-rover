@@ -1,37 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
+$main-yellow: rgb(214, 228, 18);
+
 html {
   background-image: url(https://i.stack.imgur.com/UJur5.png) !important;
+  animation: move-space infinite 60s linear;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
 }
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  max-width: 1500px;
+  margin: 0 auto;
+  color: black;
+  padding: 0 40px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Bungee Outline', cursive;
   font-size: calc(10px + 2vmin);
+  color: $main-yellow;
+  text-shadow: 1px 1px 1px rgba(white, 0.7);
+  animation: App-header-blink infinite 10s linear;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.resume {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.button {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  background: #5b13ec;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transform: scale(1);
+  transition: all 0.4s;
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  &:disabled {
+    background: lighten($color: #5b13ec, $amount: 20%);
+  }
 }
 
-@keyframes App-logo-spin {
+.toggle-form {
+  background: $main-yellow;
+  transform: scale(1);
+  transition: all 0.4s;
+  font-size: 1.1rem;
+  font-family: 'Fira Code', monospace;
+  padding: 8px 15px;
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes App-header-blink {
   from {
-    transform: rotate(0deg);
+    text-shadow: 1px 1px 1px rgba(white, 0.7);
   }
   to {
-    transform: rotate(360deg);
+    text-shadow: none;
+  }
+}
+
+@keyframes move-space {
+  from {
+    background-position: 100px 50px;
+  }
+  to {
+    background-position: 500px 50px;
   }
 }
