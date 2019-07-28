@@ -6,168 +6,93 @@ exports[`<DetailsWrapper /> should create a snapshot 1`] = `
   roverTitle="Set Rover Position"
   submitData={[Function]}
 >
-  <div
-    className="container collapse"
-  >
-    <DetailsInput
-      title="Set Plateau Size"
-    >
-      <details>
-        <summary>
-          Set Plateau Size
-        </summary>
-        <div
-          className="details-wrapper"
-        >
-          <div
-            className="details-styling"
-          >
-            <section
-              className="plateau-data"
-            >
-              <input
-                onChange={[Function]}
-                placeholder="Set Width"
-                type="number"
-                value={0}
-              />
-              <input
-                onChange={[Function]}
-                placeholder="Set Height"
-                type="number"
-                value={0}
-              />
-            </section>
-          </div>
-        </div>
-      </details>
-    </DetailsInput>
-  </div>
-  <div
-    className="container collapse"
-  >
-    <DetailsInput
-      title="Set Rover Position"
-    >
-      <details>
-        <summary>
-          Set Rover Position
-        </summary>
-        <div
-          className="details-wrapper"
-        >
-          <div
-            className="details-styling"
-          >
-            <section
-              className="rover-data"
-            >
-              <CoordsDropdown
-                height={0}
-                setRoverPosition={[Function]}
-                width={0}
-              >
-                <div
-                  className="wrapper"
-                >
-                  <h5
-                    onClick={[Function]}
-                  >
-                    Set Rover Coords
-                  </h5>
-                  <div
-                    className="items show"
-                  >
-                    <div
-                      className="coords"
-                      style={
-                        Object {
-                          "width": "0px",
-                        }
-                      }
-                    />
-                    <div
-                      className="cardinals"
-                    >
-                      <span
-                        className="item-cardinals"
-                        key="N"
-                        onClick={[Function]}
-                      >
-                        N
-                      </span>
-                      <span
-                        className="item-cardinals"
-                        key="S"
-                        onClick={[Function]}
-                      >
-                        S
-                      </span>
-                      <span
-                        className="item-cardinals"
-                        key="E"
-                        onClick={[Function]}
-                      >
-                        E
-                      </span>
-                      <span
-                        className="item-cardinals"
-                        key="W"
-                        onClick={[Function]}
-                      >
-                        W
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </CoordsDropdown>
-              <NextSteps
-                initialPosition=""
-                outOfBoundaries={0}
-                setRoverNextSteps={[Function]}
-              >
-                <div>
-                  <h5>
-                    Set Rover Next Steps
-                  </h5>
-                  <button
-                    data-step="L"
-                    key="L"
-                    onClick={[Function]}
-                  >
-                    L
-                  </button>
-                  <button
-                    data-step="M"
-                    key="M"
-                    onClick={[Function]}
-                  >
-                    M
-                  </button>
-                  <button
-                    data-step="R"
-                    key="R"
-                    onClick={[Function]}
-                  >
-                    R
-                  </button>
-                </div>
-              </NextSteps>
-              <button
-                onClick={[Function]}
-              >
-                Add Rover
-              </button>
-            </section>
-          </div>
-        </div>
-      </details>
-    </DetailsInput>
-  </div>
   <button
+    className="toggle-form"
     onClick={[Function]}
   >
-    Set Data
+    Hide
+     Form
   </button>
+  <form
+    noValidate={true}
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  >
+    0
+    <div
+      className="container collapse"
+    >
+      <DetailsInput
+        title="Set Plateau Size"
+      >
+        <details>
+          <summary>
+            Set Plateau Size
+          </summary>
+          <div
+            className="details-wrapper"
+          >
+            <div
+              className="details-styling"
+            >
+              <section
+                className="plateau-data"
+              >
+                <label
+                  htmlFor="plateau-width"
+                >
+                  <span>
+                    Set Plateau Width
+                  </span>
+                  <input
+                    id="plateau-width"
+                    onChange={[Function]}
+                    placeholder="Set Width"
+                    required={true}
+                    type="number"
+                    value={0}
+                  />
+                </label>
+                <label
+                  htmlFor="plateau-height"
+                >
+                  <span>
+                    Set Plateau Height
+                     
+                    <b />
+                  </span>
+                  <input
+                    disabled={true}
+                    id="plateau-height"
+                    min={0}
+                    onChange={[Function]}
+                    placeholder="Set Height bigger than 0"
+                    required={true}
+                    type="number"
+                    value={0}
+                  />
+                </label>
+              </section>
+            </div>
+          </div>
+        </details>
+      </DetailsInput>
+    </div>
+    <div
+      className="container collapse"
+    >
+      0
+    </div>
+    <button
+      className="button"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Set Data
+    </button>
+  </form>
 </DetailsWrapper>
 `;

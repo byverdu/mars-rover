@@ -1,4 +1,4 @@
-import React, { useState, memo, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import './DetailsWrapper.scss';
 import DetailsInput from '../DetailsInput';
 import CoordsDropdown from '../Dropdown';
@@ -155,4 +155,4 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = ({
   );
 };
 
-export default memo(DetailsWrapper);
+export default DetailsWrapper;

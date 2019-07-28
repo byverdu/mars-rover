@@ -9,8 +9,6 @@ exports[`<PlateauSquare /> should create a snapshot 1`] = `
   <div
     className="tile will-be-busy"
     data-axis="x0:y0"
-  >
-    x0:y0
-  </div>
+  />
 </PlateauSquare>
 `;

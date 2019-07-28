@@ -18,29 +18,39 @@ describe('<DetailsWrapper />', () => {
   });
 
   it('should have a plateauTitle props', () => {
-    expect((wrapper.props() as DetailsWrapperProps).plateauTitle).toEqual('Set Plateau Size');
+    expect((wrapper.props() as DetailsWrapperProps).plateauTitle).toEqual(
+      'Set Plateau Size'
+    );
   });
 
   it('should have a roverTitle props', () => {
-    expect((wrapper.props() as DetailsWrapperProps).roverTitle).toEqual('Set Rover Position');
+    expect((wrapper.props() as DetailsWrapperProps).roverTitle).toEqual(
+      'Set Rover Position'
+    );
   });
 
-  it('should initially render two DetailsInput components', () => {
-    expect(wrapper.find('DetailsInput').length).toEqual(2);
+  it('should initially render 1 DetailsInput components', () => {
+    expect(wrapper.find('DetailsInput').length).toEqual(1);
   });
 
-  it('should display the proper text for each DetailsInput component', () => {
-    expect(wrapper.find('DetailsInput').first().text()).toEqual(props.plateauTitle);
-    expect(wrapper.find('DetailsInput summary').last().text()).toEqual(props.roverTitle);
+  it('should display the proper text for the first DetailsInput component', () => {
+    expect(
+      wrapper
+        .find('DetailsInput summary')
+        .first()
+        .text()
+    ).toEqual(props.plateauTitle);
   });
 
-  it('should set the plateau width properly', () => {
-    wrapper_.find(".plateau-data input").first().simulate('change', {target: {value: 9}})
-    expect(wrapper_.find("h3").text()).toEqual('Plateau size 9 x 0')
-  });
-
-  it('should set the plateau height properly', () => {
-    wrapper_.find(".plateau-data input").last().simulate('change', {target: {value: 9}})
-    expect(wrapper_.find("h3").text()).toEqual('Plateau size 9 x 9')
+  it('should display the plateau width and height once they are set', () => {
+    wrapper_
+      .find('.plateau-data input')
+      .first()
+      .simulate('change', { target: { value: 9 } });
+    wrapper_
+      .find('.plateau-data input')
+      .last()
+      .simulate('change', { target: { value: 10 } });
+    expect(wrapper_.find('h3').text()).toEqual('Plateau size 9 x 10');
   });
 });
