@@ -1,6 +1,6 @@
 import React from 'react';
 import Plateau, { PlateauProps } from './index';
-import enzyme, { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { EnumCardinalPoints, EnumRoverStatus } from '../../Models/enums';
 

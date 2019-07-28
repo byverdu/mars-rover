@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 const props: NextStepsProps = {
-  setRoverNextSteps: (value: string) => {},
+  setRoverNextSteps: () => {},
   initialPosition: '0 0 N',
   outOfBoundaries: 1
 };
