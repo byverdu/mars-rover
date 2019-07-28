@@ -39,10 +39,13 @@ export default class App extends Component<{}, AppState> {
   postPlateau = async (payload: IPlateauPayload) => {
     const { data } = await axios.post(EnumApiRoutes.postPlateau, payload);
 
-    this.setState({
-      data,
-      rovers: data.rovers
-    });
+    this.setState(
+      {
+        data,
+        rovers: data.rovers
+      },
+      () => this.forceUpdate()
+    );
   };
 
   render() {

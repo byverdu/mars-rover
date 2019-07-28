@@ -57,7 +57,6 @@ function gridBuilder(width: number, height: number, rover: IRover) {
   }
   let counter = 1;
   while (counter <= height) {
-    console.log(counter);
     rowBuilder(counter);
     counter += 1;
   }
