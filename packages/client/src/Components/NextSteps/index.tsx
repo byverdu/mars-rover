@@ -27,12 +27,29 @@ export default class NextSteps extends React.PureComponent<
     };
   }
 
-  componentWillReceiveProps(props: NextStepsProps, state) {
+  componentWillReceiveProps(props: NextStepsProps, nextProps: NextStepsProps) {
+    if (this.state.steps.length === 0) {
+      this.isMoveForwardOutOfBoundaries(
+        props.initialPosition,
+        props.outOfBoundaries
+      );
+    }
     if (props.initialPosition === '') {
       this.setState({
         steps: ''
       });
     }
+  }
+
+  isMoveForwardOutOfBoundaries(initialPosition, outOfBoundaries) {
+    const isMoveForwardOutOfBoundaries = convertSourceInToCoords(
+      initialPosition,
+      'M',
+      outOfBoundaries
+    );
+
+    (document.querySelector('[data-step="M"]') as HTMLButtonElement).disabled =
+      isMoveForwardOutOfBoundaries === null;
   }
 
   onClickHandler = (e) => {
@@ -49,21 +66,17 @@ export default class NextSteps extends React.PureComponent<
       outOfBoundaries
     );
 
-    const isMoveForwardOutOfBoundaries = convertSourceInToCoords(
-      nextCoords,
-      'M',
-      outOfBoundaries
+    if (steps.length > 0) {
+      this.isMoveForwardOutOfBoundaries(nextCoords, outOfBoundaries);
+    }
+
+    this.setState(
+      {
+        nextPosition: nextCoords,
+        steps: newText
+      },
+      () => setRoverNextSteps(newText)
     );
-
-    (document.querySelector('[data-step="M"]') as HTMLButtonElement).disabled =
-      isMoveForwardOutOfBoundaries === null;
-
-    setRoverNextSteps(newText);
-
-    this.setState({
-      nextPosition: nextCoords,
-      steps: newText
-    });
   };
 
   render() {
