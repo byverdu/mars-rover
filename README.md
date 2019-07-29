@@ -105,7 +105,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## TODO
+## TODO
 
-[ ] Use [Swagger](https://swagger.io/) to document the API
-[ ] Write e2e tests using [cypress](https://cypress.io/)
+- [ ] Use [Swagger](https://swagger.io/) to document the API
+- [ ] Write e2e tests using [cypress](https://cypress.io/)
