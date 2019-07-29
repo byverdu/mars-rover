@@ -11,6 +11,7 @@ COPY ./packages/client /usr/src/app/packages/client
 EXPOSE 3000
 
 COPY lerna.json .
+COPY tsconfig.json .
 RUN lerna bootstrap
 
-CMD yarn start
+CMD cd ./packages/client && npm rebuild node-sass && yarn start:client

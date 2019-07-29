@@ -25,16 +25,16 @@ services:
       - ./packages/api:/usr/src/app/packages/api
       - /usr/src/app/packages/api/node_modules
 
-  # client:
-  #   build:
-  #     context: .
-  #     dockerfile: ./Dockerfile.client
-  #   container_name: mars-rover_client
-  #   depends_on:
-  #     - api
-  #   ports:
-  #     - "3040:3000"
-  #   volumes:
-  #     - ./packages/client/package.json:/usr/src/app/packages/client/package.json
-  #     - ./packages/client:/usr/src/app/packages/client
-  #     - /usr/src/app/packages/client/node_modules
+  client:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.client
+    container_name: mars-rover_client
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./packages/client/package.json:/usr/src/app/packages/client/package.json
+      - ./packages/client:/usr/src/app/packages/client
+      - /usr/src/app/packages/client/node_modules

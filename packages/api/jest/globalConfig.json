@@ -1,4 +1,4 @@
 {
   "mongoDBName": "mars-rover",
-  "mongoUri": "mongodb://127.0.0.1:56351/mars-rover"
+  "mongoUri": "mongodb://127.0.0.1:64629/mars-rover"
 }
