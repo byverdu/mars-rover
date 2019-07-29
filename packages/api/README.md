@@ -30,7 +30,7 @@ Express application to serve the API endpoints.
 > yarn test:api
 ```
 
-### Compile and run the app
+### Compile and run the app
 
 ```shell
 # out folder will be lib/
