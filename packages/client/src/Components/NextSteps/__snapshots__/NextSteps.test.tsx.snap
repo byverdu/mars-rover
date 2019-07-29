@@ -3,8 +3,9 @@
 exports[`<NextSteps /> should create a snapshot 1`] = `
 <NextSteps
   initialPosition="0 0 N"
-  outOfBoundaries={1}
   setRoverNextSteps={[Function]}
+  xAxisOutOfBoundaries={10}
+  yAxisOutOfBoundaries={9}
 >
   <div
     className="next-steps"

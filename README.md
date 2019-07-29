@@ -2,67 +2,92 @@
 
 # Mars Rover
 
-One Paragraph of project description goes here
+Simulation about how the Rovers can move through a grid after a sequence of orders were given to them.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. Clone this repository and **cd** to the newly create folder
+
+```shell
+> git clone https://github.com/byverdu/mars-rover.git
+> cd mars-rover
+```
+
+2. Change the scripts folder permissions so you can execute the scripts
+
+```shell
+> chmod +x scripts/*
+```
+
+3. Run the `setup.sh` script
+
+```shell
+> ./scripts/setup.sh
+```
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+You must have installed [Docker](https://www.docker.com/) and [NodeJs](https://nodejs.org/en/). You need to use a Unix-like operating system.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+> Docker must be running before you execute the install script
 
-Say what the step will be
+Execute the install script that will bootstrap the project and install all the needed dependencies on your system.
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```shell
+# lerna bootstrap && yarn tsc
+> ./scripts/install.sh
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Create the docker images and start the containers by running the following command
+
+```shell
+> docker-compose up --build
+```
+
+Once docker has finished, the API will be running on port 9000 and the UI on port 3000
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Previous running the tests all the npm packages must have been installed
 
-### Break down into end to end tests
+### Run all the suites
 
-Explain what these tests test and why
+```bash
+# from the root project folder
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+> yarn test
 ```
 
-## Deployment
+### Unit tests for the API
 
-Add additional notes about how to deploy this on a live system
+```bash
+# from the root project folder
+
+> cd packages/api
+> yarn test:api
+```
+
+### Unit tests for the UI
+
+```bash
+# from the root project folder
+
+> cd packages/client
+> yarn test:client
+```
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [NodeJs](https://nodejs.org/en/) - Javascript runtime environment
+* [Typescript](https://www.typescriptlang.org/) - Type superset of Javascript
+* [Lerna](https://github.com/lerna/lerna) - JavaScript projects manager
+* [ExpressJs](https://expressjs.com/) - The web framework used
+* [Mongoose](https://mongoosejs.com) - Mongodb object modeling for nodeJs
+* [React](https://reactjs.org/) - JavaScript library for building user interfaces
+* [SCSS](https://sass-lang.com/) - CSS pre-processor
+* [Jest](https://jestjs.io/) - Testing framework
 
 ## Contributing
 
@@ -74,16 +99,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Albert Vallverdu** - *Initial work* - [@Byverdu](https://github.com/Byverdu)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## TODO
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+[ ] Use [Swagger](https://swagger.io/) to document the API
+[ ] Write e2e tests using [cypress](https://cypress.io/)

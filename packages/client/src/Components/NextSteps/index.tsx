@@ -6,7 +6,8 @@ import { convertSourceInToCoords } from '../../config/utils';
 export interface NextStepsProps {
   setRoverNextSteps: (value: string) => void;
   initialPosition: string;
-  outOfBoundaries: number;
+  yAxisOutOfBoundaries: number;
+  xAxisOutOfBoundaries: number;
 }
 
 interface NextStepsState {
@@ -28,10 +29,12 @@ export default class NextSteps extends React.PureComponent<
   }
 
   componentWillReceiveProps(props: NextStepsProps, nextProps: NextStepsProps) {
+    console.log('compnewill', props, nextProps);
     if (this.state.steps.length === 0) {
       this.isMoveForwardOutOfBoundaries(
         props.initialPosition,
-        props.outOfBoundaries
+        props.yAxisOutOfBoundaries,
+        props.xAxisOutOfBoundaries
       );
     }
     if (props.initialPosition === '') {
@@ -41,11 +44,16 @@ export default class NextSteps extends React.PureComponent<
     }
   }
 
-  isMoveForwardOutOfBoundaries(initialPosition, outOfBoundaries) {
+  isMoveForwardOutOfBoundaries(
+    initialPosition,
+    yAxisOutOfBoundaries,
+    xAxisOutOfBoundaries
+  ) {
     const isMoveForwardOutOfBoundaries = convertSourceInToCoords(
       initialPosition,
       'M',
-      outOfBoundaries
+      yAxisOutOfBoundaries,
+      xAxisOutOfBoundaries
     );
 
     (document.querySelector('[data-step="M"]') as HTMLButtonElement).disabled =
@@ -54,7 +62,12 @@ export default class NextSteps extends React.PureComponent<
 
   onClickHandler = (e) => {
     e.preventDefault();
-    const { initialPosition, setRoverNextSteps, outOfBoundaries } = this.props;
+    const {
+      initialPosition,
+      setRoverNextSteps,
+      yAxisOutOfBoundaries,
+      xAxisOutOfBoundaries
+    } = this.props;
     const { steps, nextPosition } = this.state;
 
     const elementText = (e.target as HTMLButtonElement).dataset.step;
@@ -64,11 +77,16 @@ export default class NextSteps extends React.PureComponent<
     const nextCoords = convertSourceInToCoords(
       thisPosition,
       elementText,
-      outOfBoundaries
+      yAxisOutOfBoundaries,
+      xAxisOutOfBoundaries
     );
 
     if (steps.length > 0) {
-      this.isMoveForwardOutOfBoundaries(nextCoords, outOfBoundaries);
+      this.isMoveForwardOutOfBoundaries(
+        nextCoords,
+        yAxisOutOfBoundaries,
+        xAxisOutOfBoundaries
+      );
     }
 
     this.setState(

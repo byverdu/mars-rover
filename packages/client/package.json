@@ -6,7 +6,7 @@
   "homepage": "https://github.com/byverdu/mars-rover#readme",
   "license": "ISC",
   "main": "public/index.html",
-  "proxy": "http://localhost:9000",
+  "proxy": "http://mars-rover_api:9000",
   "directories": {
     "lib": "public",
     "test": "src/__tests__"

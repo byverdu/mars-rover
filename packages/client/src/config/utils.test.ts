@@ -61,26 +61,87 @@ describe('Utils', () => {
     });
   });
   describe('convertSourceInToCoords', () => {
+    const xAxisOutOfBoundaries = 4;
+    const yAxisOutOfBoundaries = 5;
     it('should return null if a step is out of boundaries', () => {
-      expect(utils.convertSourceInToCoords('3 3 N', 'M', 4)).toEqual(null);
+      expect(
+        utils.convertSourceInToCoords(
+          '3 3 N',
+          'M',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual(null);
     });
     it('should return null if a step is out of boundaries', () => {
-      expect(utils.convertSourceInToCoords('3 3 E', 'M', 4)).toEqual(null);
+      expect(
+        utils.convertSourceInToCoords(
+          '4 3 E',
+          'M',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual(null);
     });
     it('should return null if a step is out of boundaries', () => {
-      expect(utils.convertSourceInToCoords('0 3 W', 'M', 4)).toEqual(null);
+      expect(
+        utils.convertSourceInToCoords(
+          '0 3 W',
+          'M',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual(null);
     });
     it('should return null if a step is out of boundaries', () => {
-      expect(utils.convertSourceInToCoords('0 0 S', 'M', 4)).toEqual(null);
+      expect(
+        utils.convertSourceInToCoords(
+          '0 0 S',
+          'M',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual(null);
+    });
+    it('should return null if a step is out of boundaries', () => {
+      expect(
+        utils.convertSourceInToCoords(
+          '4 0 S',
+          'M',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual(null);
     });
     it('should return the next step', () => {
-      expect(utils.convertSourceInToCoords('0 0 S', 'L', 4)).toEqual('0 0 E');
+      expect(
+        utils.convertSourceInToCoords(
+          '0 0 S',
+          'L',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual('0 0 E');
     });
     it('should return the next step', () => {
-      expect(utils.convertSourceInToCoords('1 1 S', 'M', 4)).toEqual('1 0 S');
+      expect(
+        utils.convertSourceInToCoords(
+          '1 1 S',
+          'M',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual('1 0 S');
     });
     it('should return the next step', () => {
-      expect(utils.convertSourceInToCoords('1 1 S', 'R', 4)).toEqual('1 1 W');
+      expect(
+        utils.convertSourceInToCoords(
+          '1 1 S',
+          'R',
+          xAxisOutOfBoundaries,
+          yAxisOutOfBoundaries
+        )
+      ).toEqual('1 1 W');
     });
   });
   describe('prepareRoversData', () => {

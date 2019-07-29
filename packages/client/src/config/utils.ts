@@ -53,7 +53,8 @@ const possibleDirections = {
 export function convertSourceInToCoords(
   position: string,
   step: string,
-  outOfBoundaries: number
+  yAxisOutOfBoundaries: number,
+  xAxisOutOfBoundaries: number
 ) {
   const currentPosition = position.split(' ');
   const tempCoords = {
@@ -91,9 +92,9 @@ export function convertSourceInToCoords(
 
   if (
     tempCoords.x === -1 ||
-    tempCoords.x === outOfBoundaries ||
+    tempCoords.x === xAxisOutOfBoundaries ||
     tempCoords.y === -1 ||
-    tempCoords.y === outOfBoundaries
+    tempCoords.y === yAxisOutOfBoundaries
   ) {
     return null;
   }
