@@ -79,8 +79,6 @@ function cardinalPointsBuilder(setRoverPosition) {
         const element = e.target as HTMLElement;
         const siblingText = getTextSiblingSelected('.item-coords.selected');
 
-        console.log(`${siblingText} ${element.textContent}`);
-
         element.classList.add('selected');
         setRoverPosition(`${siblingText} ${element.textContent}`);
       }}

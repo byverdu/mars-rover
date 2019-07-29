@@ -32,7 +32,6 @@ const getPathToJsonMock = (fileName) => {
 
 export const utils: Utils = {
   postPlateau: (data: IPlateau[], { plateauSize, rovers }: IPlateauPayload) => {
-    console.log(plateauSize, 'inside utils file');
     const tempPlateau = plateauSize.split('x');
     const uuidPlateau = v4();
     const tempRovers: IRover[] = rovers.map((item: IRoverPositionPayload) => {

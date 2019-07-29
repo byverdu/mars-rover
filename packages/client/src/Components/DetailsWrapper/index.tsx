@@ -45,11 +45,7 @@ export default class DetailsWrapper extends Component<
     };
   }
 
-  componentWillReceiveProps(props, nextProps) {
-    console.log(props, nextProps);
-  }
-
-  toggleForm = (toggle?: boolean) => {
+  toggleForm = () => {
     this.setState({
       displayForm: !this.state.displayForm
     });
@@ -191,10 +187,16 @@ export default class DetailsWrapper extends Component<
             className="button"
             onClick={(e) => {
               e.preventDefault();
-              this.toggleForm(false);
               submitData({
                 plateauSize: `${plateauWidth}x${plateauHeight}`,
                 rovers
+              });
+
+              this.setState({
+                displayForm: false,
+                rovers: [],
+                roverNextSteps: undefined,
+                roverPosition: undefined
               });
             }}
           >
