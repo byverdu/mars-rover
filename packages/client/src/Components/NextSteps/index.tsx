@@ -29,7 +29,6 @@ export default class NextSteps extends React.PureComponent<
   }
 
   componentWillReceiveProps(props: NextStepsProps, nextProps: NextStepsProps) {
-    console.log('compnewill', props, nextProps);
     if (this.state.steps.length === 0) {
       this.isMoveForwardOutOfBoundaries(
         props.initialPosition,

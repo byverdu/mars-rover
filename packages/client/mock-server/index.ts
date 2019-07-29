@@ -4,10 +4,7 @@ import { EnumApiRoutes } from '../src/Models/enums';
 import { IPlateauPayload } from '../src/Models/Interfaces';
 
 const jsonServer = require('json-server');
-const {
-  getContentForRoutes,
-  postPlateau
-} = utils;
+const { getContentForRoutes, postPlateau } = utils;
 const MOCK_PORT = process.env.MOCK_PORT || 9000;
 
 function createApp(routes) {
@@ -29,10 +26,10 @@ function createApp(routes) {
   });
 
   server.post(EnumApiRoutes.postPlateau, (req: Request, res: Response) => {
-    const {plateauSize, rovers} = req.body;
-    console.log(req.body)
-    const plateau = db.get('plateau')
-      .postPlateau({plateauSize, rovers} as IPlateauPayload)
+    const { plateauSize, rovers } = req.body;
+    const plateau = db
+      .get('plateau')
+      .postPlateau({ plateauSize, rovers } as IPlateauPayload)
       .value();
 
     res.status(200);

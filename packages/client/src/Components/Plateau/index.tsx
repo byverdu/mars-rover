@@ -136,7 +136,6 @@ export default class Plateau extends Component<PlateauProps, PlateauState> {
       this.state.countRoversMoved > 0 &&
       this.state.roverMoving.uuid !== prevState.roverMoving.uuid
     ) {
-      console.log(this.state.roverMoving.uuid);
       const { countRoversMoved } = this.state;
       const rover = this.state.rovers[countRoversMoved];
       const { stepsToNextPosition } = this.state.rovers[countRoversMoved];
