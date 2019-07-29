@@ -29,12 +29,7 @@ React application
 > yarn test:client
 ```
 
-### Compile and run the app
+### Compile the app
 
 ```shell
-# out folder will be lib/
 > yarn build
-
-# run the server
-> yarn start:client
-```
